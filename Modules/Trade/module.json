@@ -1,0 +1,17 @@
+{
+    "name": "Trade",
+    "alias": "trade",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Trade\\Providers\\TradeServiceProvider",
+        "Modules\\Trade\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        
+    ],
+    "requires": []
+}

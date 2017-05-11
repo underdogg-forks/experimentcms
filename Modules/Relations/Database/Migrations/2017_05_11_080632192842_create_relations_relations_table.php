@@ -16,7 +16,7 @@ class CreateRelationsRelationsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('relationname', 100);
-            $table->string('relationslug', 100);
+            $table->string('slug', 100);
             $table->timestamps();
         });
     }

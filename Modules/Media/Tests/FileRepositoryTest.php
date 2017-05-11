@@ -3,7 +3,7 @@
 namespace Modules\Media\Tests;
 
 use Mockery;
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\Repositories\FileRepository;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

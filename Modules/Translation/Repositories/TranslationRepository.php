@@ -3,7 +3,7 @@
 namespace Modules\Translation\Repositories;
 
 use Modules\Core\Repositories\BaseRepository;
-use Modules\Translation\Entities\TranslationTranslation;
+use Modules\Translation\Models\TranslationTranslation;
 
 interface TranslationRepository extends BaseRepository
 {

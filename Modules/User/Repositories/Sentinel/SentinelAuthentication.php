@@ -148,7 +148,7 @@ class SentinelAuthentication implements Authentication
 
     /**
      * Get the currently logged in user
-     * @return \Modules\User\Entities\UserInterface
+     * @return \Modules\User\Models\UserInterface
      */
     public function user()
     {

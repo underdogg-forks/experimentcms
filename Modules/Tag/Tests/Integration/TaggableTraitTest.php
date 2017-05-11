@@ -2,7 +2,7 @@
 
 namespace Modules\Tag\Tests\Integration;
 
-use Modules\Page\Entities\Page;
+use Modules\Page\Models\Page;
 use Modules\Page\Repositories\PageRepository;
 use Modules\Tag\Repositories\TagRepository;
 use Modules\Tag\Tests\BaseTestCase;

@@ -2,7 +2,7 @@
 
 namespace Modules\Media\Support\Traits;
 
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 
 trait MediaRelation
 {

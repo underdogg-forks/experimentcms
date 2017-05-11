@@ -124,7 +124,7 @@ class ModuleScaffoldTest extends BaseTestCase
         $this->scaffoldModuleWithEloquent(['Category', 'Post']);
 
         // Assert
-        $entities = $this->finder->allFiles($this->testModulePath . '/Entities');
+        $entities = $this->finder->allFiles($this->testModulePath . '/Models');
         $this->assertCount(4, $entities);
 
         $this->cleanUp();
@@ -137,7 +137,7 @@ class ModuleScaffoldTest extends BaseTestCase
         $this->scaffoldModuleWithDoctrine(['Category', 'Post']);
 
         // Assert
-        $entities = $this->finder->allFiles($this->testModulePath . '/Entities');
+        $entities = $this->finder->allFiles($this->testModulePath . '/Models');
         $this->assertCount(4, $entities);
 
         $this->cleanUp();
@@ -150,8 +150,8 @@ class ModuleScaffoldTest extends BaseTestCase
         $this->scaffoldModuleWithEloquent();
 
         // Assert
-        $entity = $this->finder->isFile($this->testModulePath . '/Entities/Post.php');
-        $translationEntity = $this->finder->isFile($this->testModulePath . '/Entities/PostTranslation.php');
+        $entity = $this->finder->isFile($this->testModulePath . '/Models/Post.php');
+        $translationEntity = $this->finder->isFile($this->testModulePath . '/Models/PostTranslation.php');
         $this->assertTrue($entity);
         $this->assertTrue($translationEntity);
 

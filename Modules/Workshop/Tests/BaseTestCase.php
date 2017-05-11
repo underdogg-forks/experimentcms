@@ -46,7 +46,7 @@ abstract class BaseTestCase extends TestCase
             'config' => 'Config',
             'command' => 'Console',
             'migration' => 'Database/Migrations',
-            'model' => 'Entities',
+            'model' => 'Models',
             'repository' => 'Repositories',
             'seeder' => 'Database/Seeders',
             'controller' => 'Http/Controllers',

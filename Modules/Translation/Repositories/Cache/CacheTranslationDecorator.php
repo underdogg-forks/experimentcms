@@ -3,7 +3,7 @@
 namespace Modules\Translation\Repositories\Cache;
 
 use Modules\Core\Repositories\Cache\BaseCacheDecorator;
-use Modules\Translation\Entities\TranslationTranslation;
+use Modules\Translation\Models\TranslationTranslation;
 use Modules\Translation\Repositories\TranslationRepository;
 
 class CacheTranslationDecorator extends BaseCacheDecorator implements TranslationRepository

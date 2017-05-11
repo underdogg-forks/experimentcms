@@ -4,7 +4,7 @@ namespace Modules\Media\Http\Controllers\Admin;
 
 use Illuminate\Contracts\Config\Repository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\Http\Requests\UpdateMediaRequest;
 use Modules\Media\Image\Imagy;
 use Modules\Media\Image\ThumbnailManager;

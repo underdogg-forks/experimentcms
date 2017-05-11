@@ -24,7 +24,7 @@
         $(document).ready(function () {
             $("#ToggleSideMenu").click(function (e) {
                 e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
+                $("#wrapper").toggleClass("toggle");
             });
         });
     </script>
@@ -35,24 +35,11 @@
     @include('partials.navigation')
     {{--Also contains Side navigation!--}}
     <div id="page-wrapper">
-        <div class="alert alert-success">
-            temp
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
         <div class="row">
             <div class="col-lg-12">
                 @yield('content')
             </div>
         </div><!-- /.row -->
-        <div class="col-lg-12">
-            <h1 class="page-footer">Dashboard</h1>
-        </div>
     </div>
     <!-- /#page-wrapper -->
 
@@ -62,6 +49,7 @@
 
 
 </div><!-- /#wrapper -->
+<div class="footer_fixed">Footer</div>
 
 {!! Theme::script('js/all.js') !!}
 @yield('scripts')

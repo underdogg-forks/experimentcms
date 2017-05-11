@@ -5,7 +5,7 @@ namespace Modules\User\Http\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\User\Contracts\Authentication;
-use Modules\User\Entities\UserInterface;
+use Modules\User\Models\UserInterface;
 use Modules\User\Repositories\UserTokenRepository;
 
 class TokenCan

@@ -5,7 +5,7 @@ namespace Modules\Tag\Providers;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Tag\Blade\TagWidget;
-use Modules\Tag\Entities\Tag;
+use Modules\Tag\Models\Tag;
 use Modules\Tag\Repositories\Cache\CacheTagDecorator;
 use Modules\Tag\Repositories\Eloquent\EloquentTagRepository;
 use Modules\Tag\Repositories\TagManager;

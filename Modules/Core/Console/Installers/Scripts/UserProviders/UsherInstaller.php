@@ -67,8 +67,8 @@ class UsherInstaller extends ProviderInstaller implements SetupScript
 
         $config = $this->finder->get($path);
 
-        $config = str_replace('Maatwebsite\Usher\Domain\Users\UsherUser', "Modules\\User\\Entities\\{$this->driver}\\User", $config);
-        $config = str_replace('Maatwebsite\Usher\Domain\Roles\UsherRole', "Modules\\User\\Entities\\{$this->driver}\\Role", $config);
+        $config = str_replace('Maatwebsite\Usher\Domain\Users\UsherUser', "Modules\\User\\Models\\{$this->driver}\\User", $config);
+        $config = str_replace('Maatwebsite\Usher\Domain\Roles\UsherRole', "Modules\\User\\Models\\{$this->driver}\\Role", $config);
 
         $this->finder->put($path, $config);
 
@@ -77,7 +77,7 @@ class UsherInstaller extends ProviderInstaller implements SetupScript
 
         $config = $this->finder->get($path);
 
-        $config = str_replace('// Paths to entities here...', 'base_path(\'Modules/User/Entities/Usher\')', $config);
+        $config = str_replace('// Paths to entities here...', 'base_path(\'Modules/User/Models/Usher\')', $config);
 
         $this->finder->put($path, $config);
 

@@ -3,7 +3,7 @@
 namespace Modules\Tag\Http\Controllers\Admin;
 
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
-use Modules\Tag\Entities\Tag;
+use Modules\Tag\Models\Tag;
 use Modules\Tag\Http\Requests\CreateTagRequest;
 use Modules\Tag\Http\Requests\UpdateTagRequest;
 use Modules\Tag\Repositories\TagManager;

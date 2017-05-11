@@ -2,7 +2,7 @@
 
 namespace Modules\Menu\Composers;
 
-use Modules\Menu\Entities\Menuitem as MenuitemEntity;
+use Modules\Menu\Models\Menuitem as MenuitemEntity;
 use Modules\Menu\Repositories\MenuItemRepository;
 use Modules\Menu\Repositories\MenuRepository;
 use Nwidart\Menus\Builder;

@@ -53,7 +53,7 @@ return [
 
     'users' => [
 
-        'model' => \Modules\User\Entities\Sentinel\User::class,
+        'model' => \Modules\User\Models\Sentinel\User::class,
 
     ],
 

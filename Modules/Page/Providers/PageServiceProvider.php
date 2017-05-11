@@ -5,7 +5,7 @@ namespace Modules\Page\Providers;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
-use Modules\Page\Entities\Page;
+use Modules\Page\Models\Page;
 use Modules\Page\Repositories\Cache\CachePageDecorator;
 use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
 use Modules\Page\Services\FinderService;

@@ -4,7 +4,7 @@ namespace Modules\User\Http\Controllers\Admin\Account;
 
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\User\Contracts\Authentication;
-use Modules\User\Entities\UserToken;
+use Modules\User\Models\UserToken;
 use Modules\User\Repositories\UserTokenRepository;
 
 class ApiKeysController extends AdminBaseController

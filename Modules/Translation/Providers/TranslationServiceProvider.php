@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Modules\Core\Composers\CurrentUserViewComposer;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Translation\Console\BuildTranslationsCacheCommand;
-use Modules\Translation\Entities\Translation;
+use Modules\Translation\Models\Translation;
 use Modules\Translation\Repositories\Cache\CacheTranslationDecorator;
 use Modules\Translation\Repositories\Eloquent\EloquentTranslationRepository;
 use Modules\Translation\Repositories\File\FileTranslationRepository as FileDiskTranslationRepository;

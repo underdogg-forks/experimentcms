@@ -9,7 +9,7 @@ use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Media\Blade\MediaMultipleDirective;
 use Modules\Media\Blade\MediaSingleDirective;
 use Modules\Media\Console\RefreshThumbnailCommand;
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\Events\Handlers\HandleMediaStorage;
 use Modules\Media\Events\Handlers\RemovePolymorphicLink;
 use Modules\Media\Image\ThumbnailManager;

@@ -6,7 +6,7 @@ use Cartalyst\Sentinel\Laravel\SentinelServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\User\Contracts\Authentication;
-use Modules\User\Entities\UserToken;
+use Modules\User\Models\UserToken;
 use Modules\User\Http\Middleware\AuthorisedApiToken;
 use Modules\User\Http\Middleware\AuthorisedApiTokenAdmin;
 use Modules\User\Http\Middleware\GuestMiddleware;

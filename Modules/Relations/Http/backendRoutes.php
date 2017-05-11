@@ -3,6 +3,15 @@
 use Illuminate\Routing\Router;
 /** @var Router $router */
 
+
+$router->get('helloworld', [
+    'as' => 'admin.relations.relation.index',
+    'uses' => 'RelationController@index',
+    'middleware' => 'can:relations.relations.index'
+]);
+
+
+
 $router->group(['prefix' =>'/relations'], function (Router $router) {
     $router->bind('relation', function ($id) {
         return app('Modules\Relations\Repositories\RelationRepository')->find($id);

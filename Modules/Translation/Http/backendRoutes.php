@@ -5,7 +5,7 @@ use Illuminate\Routing\Router;
 /** @var Router $router */
 $router->group(['prefix' =>'/translation'], function (Router $router) {
     $router->bind('translations', function ($id) {
-        return \Modules\Translation\Entities\TranslationTranslation::find($id);
+        return \Modules\Translation\Models\TranslationTranslation::find($id);
     });
     $router->get('translations', [
         'uses' => 'TranslationController@index',

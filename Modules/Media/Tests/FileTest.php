@@ -2,7 +2,7 @@
 
 namespace Modules\Media\Tests;
 
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\Repositories\FileRepository;
 use Modules\Media\ValueObjects\MediaPath;
 

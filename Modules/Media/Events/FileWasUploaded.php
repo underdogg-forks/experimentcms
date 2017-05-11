@@ -2,7 +2,7 @@
 
 namespace Modules\Media\Events;
 
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 
 class FileWasUploaded
 {

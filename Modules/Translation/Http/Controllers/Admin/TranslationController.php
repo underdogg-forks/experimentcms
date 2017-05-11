@@ -4,7 +4,7 @@ namespace Modules\Translation\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
-use Modules\Translation\Entities\TranslationTranslation;
+use Modules\Translation\Models\TranslationTranslation;
 use Modules\Translation\Exporters\TranslationsExporter;
 use Modules\Translation\Http\Requests\ImportTranslationsRequest;
 use Modules\Translation\Importers\TranslationsImporter;

@@ -147,7 +147,7 @@ abstract class ProviderInstaller implements SetupScript
 
         $config = $this->finder->get($path);
 
-        $config = str_replace($search, "Modules\\User\\Entities\\{$Driver}\\User", $config);
+        $config = str_replace($search, "Modules\\User\\Models\\{$Driver}\\User", $config);
 
         $this->finder->put($path, $config);
     }

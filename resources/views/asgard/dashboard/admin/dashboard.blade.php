@@ -5,9 +5,12 @@
         {{ trans('dashboard::dashboard.name') }}
     </h1>
     <div class="btn-group pull-right">
-        <a class="btn btn-default" id="edit-grid" data-mode="0" href="#">{{ trans('dashboard::dashboard.edit grid') }}</a>
-        <a class="btn btn-default" id="reset-grid" href="{{ route('dashboard.grid.reset')  }}">{{ trans('dashboard::dashboard.reset grid') }}</a>
-        <a class="btn btn-default hidden" id="add-widget" data-toggle="modal" data-target="#myModal">{{ trans('dashboard::dashboard.add widget') }}</a>
+        <a class="btn btn-default" id="edit-grid" data-mode="0"
+           href="#">{{ trans('dashboard::dashboard.edit grid') }}</a>
+        <a class="btn btn-default" id="reset-grid"
+           href="{{ route('dashboard.grid.reset')  }}">{{ trans('dashboard::dashboard.reset grid') }}</a>
+        <a class="btn btn-default hidden" id="add-widget" data-toggle="modal"
+           data-target="#myModal">{{ trans('dashboard::dashboard.add widget') }}</a>
     </div>
     <div class="clearfix"></div>
 @stop
@@ -34,8 +37,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{{ trans('dashboard::dashboard.add widget to dashboard') }}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"
+                        id="myModalLabel">{{ trans('dashboard::dashboard.add widget to dashboard') }}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -68,7 +73,7 @@
                     var items = GridStackUI.Utils.sort(this.serialized_data);
                     _.each(items, function (node) {
                         this.spawn_widget(node);
-                        jQuery(jQuery.find('option[value="'+node.id+'"]')[0]).hide();
+                        jQuery(jQuery.find('option[value="' + node.id + '"]')[0]).hide();
                     }, this);
                 }.bind(this);
                 this.save_grid = function () {
@@ -90,7 +95,7 @@
                             _token: '<?= csrf_token() ?>',
                             grid: JSON.stringify(this.serialized_data)
                         },
-                        success: function(data) {
+                        success: function (data) {
                             console.log(data);
                         }
                     });
@@ -124,11 +129,11 @@
                 }.bind(this);
                 this.spawn_widget = function (node) {
                     var html = node.html === undefined ? this.defaultWidgets[node.id].html : node.html,
-                        element = jQuery('<div><div class="grid-stack-item-content" />' + html + '<div/>'),
-                        x = node.options === undefined ? node.x : node.options.x,
-                        y = node.options === undefined ? node.y : node.options.y,
-                        width = node.options === undefined ? node.width : node.options.width,
-                        height = node.options === undefined ? node.height : node.options.height;
+                            element = jQuery('<div><div class="grid-stack-item-content" />' + html + '<div/>'),
+                            x = node.options === undefined ? node.x : node.options.x,
+                            y = node.options === undefined ? node.y : node.options.y,
+                            width = node.options === undefined ? node.width : node.options.width,
+                            height = node.options === undefined ? node.height : node.options.height;
 
                     this.grid.add_widget(element, x, y, width, height);
 

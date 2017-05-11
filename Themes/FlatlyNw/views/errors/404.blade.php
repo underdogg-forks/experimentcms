@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.account')
 
 @section('title')
     404 Not Found | @parent

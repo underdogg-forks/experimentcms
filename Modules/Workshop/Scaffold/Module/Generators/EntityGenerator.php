@@ -44,11 +44,11 @@ class EntityGenerator extends Generator
 
         foreach ($entities as $entity) {
             $this->writeFile(
-                $this->getModulesPath("Entities/$entity"),
+                $this->getModulesPath("Models/$entity"),
                 $this->getContentForStub($entityTypeStub, $entity)
             );
             $this->writeFile(
-                $this->getModulesPath("Entities/{$entity}Translation"),
+                $this->getModulesPath("Models/{$entity}Translation"),
                 $this->getContentForStub("{$entityType}-entity-translation.stub", $entity)
             );
             if ($this->entityType == 'Eloquent') {

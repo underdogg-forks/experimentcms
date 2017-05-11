@@ -4,7 +4,7 @@ namespace Modules\Relations\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\Relations\Entities\Relation;
+use Modules\Relations\Models\Relation;
 use Modules\Relations\Repositories\RelationRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 

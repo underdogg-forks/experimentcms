@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Modules\User\Entities\UserInterface;
+use Modules\User\Models\UserInterface;
 
 class WelcomeEmail extends Mailable implements ShouldQueue
 {

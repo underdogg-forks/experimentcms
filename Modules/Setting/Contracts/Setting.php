@@ -27,7 +27,7 @@ interface Setting
      *
      * @param  string $key
      * @param  mixed  $value
-     * @return \Modules\Setting\Entities\Setting
+     * @return \Modules\Setting\Models\Setting
      */
     public function set($key, $value);
 }

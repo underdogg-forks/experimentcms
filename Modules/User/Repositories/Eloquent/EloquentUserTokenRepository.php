@@ -21,7 +21,7 @@ class EloquentUserTokenRepository extends EloquentBaseRepository implements User
 
     /**
      * @param int $userId
-     * @return \Modules\User\Entities\UserToken
+     * @return \Modules\User\Models\UserToken
      */
     public function generateFor($userId)
     {

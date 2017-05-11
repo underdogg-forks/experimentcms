@@ -3,7 +3,7 @@
 namespace Modules\Menu\Http\Controllers\Admin;
 
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
-use Modules\Menu\Entities\Menu;
+use Modules\Menu\Models\Menu;
 use Modules\Menu\Http\Requests\CreateMenuRequest;
 use Modules\Menu\Http\Requests\UpdateMenuRequest;
 use Modules\Menu\Repositories\MenuItemRepository;

@@ -100,7 +100,7 @@ return [
             'event' => 'Events',
             'listener' => 'Events/Handlers',
             'migration' => 'Database/Migrations',
-            'model' => 'Entities',
+            'model' => 'Models',
             'repository' => 'Repositories',
             'seeder' => 'Database/Seeders',
             'controller' => 'Http/Controllers',

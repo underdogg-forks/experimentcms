@@ -5,7 +5,7 @@ namespace Modules\Media\Image;
 use GuzzleHttp\Psr7\Stream;
 use Illuminate\Contracts\Filesystem\Factory;
 use Intervention\Image\ImageManager;
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\ValueObjects\MediaPath;
 
 class Imagy

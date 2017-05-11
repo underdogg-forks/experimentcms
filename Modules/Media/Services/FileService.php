@@ -4,7 +4,7 @@ namespace Modules\Media\Services;
 
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\Jobs\CreateThumbnails;
 use Modules\Media\Repositories\FileRepository;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

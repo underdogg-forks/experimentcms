@@ -2,7 +2,7 @@
 
 namespace Modules\User\Repositories;
 
-use Modules\User\Entities\UserInterface;
+use Modules\User\Models\UserInterface;
 
 /**
  * Interface UserRepository

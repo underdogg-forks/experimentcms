@@ -1560,7 +1560,7 @@ var testHtml = function( valueObj ) {
 	equal(
 		div[ 0 ].innerHTML.replace( /\xA0/, "&nbsp;" ),
 		"&nbsp;&amp;",
-		"Entities are passed through correctly"
+		"Models are passed through correctly"
 	);
 
 	tmp = "&lt;div&gt;hello1&lt;/div&gt;";

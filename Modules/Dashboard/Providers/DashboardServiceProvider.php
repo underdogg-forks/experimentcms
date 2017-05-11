@@ -4,7 +4,7 @@ namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
-use Modules\Dashboard\Entities\Widget;
+use Modules\Dashboard\Models\Widget;
 use Modules\Dashboard\Repositories\Cache\CacheWidgetDecorator;
 use Modules\Dashboard\Repositories\Eloquent\EloquentWidgetRepository;
 use Modules\Dashboard\Repositories\WidgetRepository;

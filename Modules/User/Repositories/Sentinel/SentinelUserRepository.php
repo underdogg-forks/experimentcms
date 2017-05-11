@@ -5,7 +5,7 @@ namespace Modules\User\Repositories\Sentinel;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\Hash;
-use Modules\User\Entities\Sentinel\User;
+use Modules\User\Models\Sentinel\User;
 use Modules\User\Events\UserHasRegistered;
 use Modules\User\Events\UserIsUpdating;
 use Modules\User\Events\UserWasCreated;
@@ -16,7 +16,7 @@ use Modules\User\Repositories\UserRepository;
 class SentinelUserRepository implements UserRepository
 {
     /**
-     * @var \Modules\User\Entities\Sentinel\User
+     * @var \Modules\User\Models\Sentinel\User
      */
     protected $user;
     /**

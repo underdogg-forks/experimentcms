@@ -4,7 +4,7 @@ namespace Modules\Media\Repositories\Eloquent;
 
 use Illuminate\Database\Eloquent\Collection;
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
-use Modules\Media\Entities\File;
+use Modules\Media\Models\File;
 use Modules\Media\Helpers\FileHelper;
 use Modules\Media\Repositories\FileRepository;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

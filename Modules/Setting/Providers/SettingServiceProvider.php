@@ -6,7 +6,7 @@ use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Setting\Blade\SettingDirective;
-use Modules\Setting\Entities\Setting;
+use Modules\Setting\Models\Setting;
 use Modules\Setting\Facades\Settings as SettingsFacade;
 use Modules\Setting\Repositories\Cache\CacheSettingDecorator;
 use Modules\Setting\Repositories\Eloquent\EloquentSettingRepository;

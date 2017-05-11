@@ -45,7 +45,7 @@ class RelationsServiceProvider extends ServiceProvider
         $this->app->bind(
             'Modules\Relations\Repositories\RelationRepository',
             function () {
-                $repository = new \Modules\Relations\Repositories\Eloquent\EloquentRelationRepository(new \Modules\Relations\Entities\Relation());
+                $repository = new \Modules\Relations\Repositories\Eloquent\EloquentRelationRepository(new \Modules\Relations\Models\Relation());
 
                 if (! config('app.cache')) {
                     return $repository;

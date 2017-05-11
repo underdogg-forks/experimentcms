@@ -1,0 +1,17 @@
+{
+    "name": "Relations",
+    "alias": "relations",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Relations\\Providers\\RelationsServiceProvider",
+        "Modules\\Relations\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        
+    ],
+    "requires": []
+}

@@ -36,14 +36,16 @@ class CreateRelationsRelationsTable extends Migration
             $table->unsignedInteger('datetime_format_id')->nullable();
             $table->unsignedInteger('currency_id')->default(0);
 
-            $table->foreign('timezone_id')->references('id')->on('timezones');
-            $table->foreign('date_format_id')->references('id')->on('date_formats');
-            $table->foreign('datetime_format_id')->references('id')->on('datetime_formats');
-            $table->foreign('currency_id')->references('id')->on('currencies');
-
             $table->softDeletes();
             $table->timestamps();
+
+
+            if (!Schema::hasColumn('companies', 'id')) {
+                $table->foreign('companies')->references('id')->on('companies');
+            }
+
         });
+
     }
 
     /**

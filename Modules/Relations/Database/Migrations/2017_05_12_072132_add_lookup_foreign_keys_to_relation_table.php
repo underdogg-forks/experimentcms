@@ -14,10 +14,9 @@ class AddLookupForeignKeysToRelationTable extends Migration
     public function up()
     {
         Schema::table('relations__relations', function (Blueprint $table) {
-            $table->foreign('timezone_id')->references('id')->on('lookup__timezones');
-            $table->foreign('date_format_id')->references('id')->on('lookup__date_formats');
-            $table->foreign('datetime_format_id')->references('id')->on('lookup__datetime_formats');
-            $table->foreign('currency_id')->references('id')->on('lookup__currencies');
+            $table->foreign('timezone_id', 'fk_timezone_id')->references('id')->on('lookup__timezones');
+            $table->foreign('date_format_id', 'fk_date_format_id')->references('id')->on('lookup__date_formats');
+            $table->foreign('currency_id', 'fk_currency_id')->references('id')->on('lookup__currencies');
         });
     }
 
@@ -28,7 +27,7 @@ class AddLookupForeignKeysToRelationTable extends Migration
      */
     public function down()
     {
-        Schema::table('relation', function (Blueprint $table) {
+        Schema::table('relations__relations', function (Blueprint $table) {
 
         });
     }

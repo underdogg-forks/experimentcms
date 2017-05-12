@@ -10,6 +10,10 @@ Route::get('companies', [
 ]);
 
 
+Route::get('getcompany', ['as' => 'getcompany', 'uses' => 'Admin\helpdesk\SettingsController@getcompany']); // direct to company setting page
+Route::patch('postcompany/{id}', 'Admin\helpdesk\SettingsController@postcompany'); // Updating the Company table with requests
+
+
 Route::group(['prefix' =>'/companies'], function (Router $router) {
     $router->bind('company', function ($id) {
         return app('Modules\Core\Repositories\CompanyRepository')->find($id);

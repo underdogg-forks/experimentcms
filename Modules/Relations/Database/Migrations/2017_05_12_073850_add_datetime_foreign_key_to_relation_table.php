@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddDatetimeformatForeignKeyToRelationTable extends Migration
+class AddDatetimeForeignKeyToRelationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,7 @@ class AddDatetimeformatForeignKeyToRelationTable extends Migration
      */
     public function up()
     {
-        Schema::table('relations__relations', function (Blueprint $table) {
-            $table->foreign('datetime_format_id', 'fk_datetimeformat')->references('id')->on('lookup__datetime_formats');
-        });
+        DB::statement('ALTER TABLE `relations__relations` ADD CONSTRAINT `fk_datetime_format_id` FOREIGN KEY (`datetime_format_id`) REFERENCES `lookup__date_time_formats`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;');
     }
 
     /**

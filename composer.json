@@ -11,6 +11,12 @@
   "version": "2.0",
   "license": "MIT",
   "type": "project",
+  "config": {
+    "preferred-install": "dist",
+        "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": ">=5.6.4",
     "laravel/framework": "5.3.19",
@@ -53,6 +59,11 @@
       "tests/TestCase.php"
     ]
   },
+  "extra": {
+    "branch-alias": {
+      "dev-2.0": "2.0.x-dev"
+    }
+  },
   "scripts": {
     "post-install-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postInstall",
@@ -60,17 +71,10 @@
     ],
     "post-update-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+
+        "php artisan ide-helper:generate",
+        "php artisan ide-helper:meta",
       "php artisan optimize"
     ]
-  },
-  "config": {
-    "preferred-install": "dist"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-2.0": "2.0.x-dev"
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }

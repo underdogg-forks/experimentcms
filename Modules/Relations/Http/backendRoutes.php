@@ -12,7 +12,7 @@ $router->get('helloworld', [
 
 
 
-$router->group(['prefix' =>'/relations'], function (Router $router) {
+$router->group(['prefix' =>''], function (Router $router) {
     $router->bind('relation', function ($id) {
         return app('Modules\Relations\Repositories\RelationRepository')->find($id);
     });

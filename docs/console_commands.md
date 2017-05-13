@@ -55,3 +55,5 @@ module:make-event
 module:enable
 module:disable
 module:make-migration
+Example : 
+php artisan module:make-migration Auth create_users_table

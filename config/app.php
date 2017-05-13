@@ -188,6 +188,16 @@ return [
         Modules\Core\Providers\AsgardServiceProvider::class,
 
         App\Providers\RouteServiceProvider::class,
+
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+
+
+
+
+
+
     ],
 
     /*
@@ -234,6 +244,17 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
+
+
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+
+
+
+
+
+
+
     ],
 
 ];

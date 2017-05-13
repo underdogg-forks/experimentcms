@@ -1,0 +1,19 @@
+{
+    "name": "Auth",
+    "alias": "auth",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Auth\\Providers\\AuthServiceProvider",
+        "Modules\\User\\Providers\\EventServiceProvider",
+        "Modules\\User\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "composers.php",
+        "helpers.php"
+    ],
+    "requires": []
+}

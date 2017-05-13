@@ -13,30 +13,65 @@
   "type": "project",
   "config": {
     "preferred-install": "dist",
-        "sort-packages": true
+    "sort-packages": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
     "php": ">=5.6.4",
-    "laravel/framework": "5.3.19",
-    "nwidart/laravel-modules": "~1.0",
+    "acoustep/entrust-gui": "5.2.x-dev",
+    "anahkiasen/former": "^4.1",
+    "barryvdh/laravel-ide-helper": "^2.3",
+    "baum/baum": "^1.0",
     "cartalyst/sentinel": "~2.0",
+    "cviebrock/eloquent-sluggable": "^3.1",
+    "davejamesmiller/laravel-breadcrumbs": "^3.0",
+    "davibennun/laravel-push-notification": "dev-laravel5",
+    "doctrine/dbal": "^2.5",
+    "filp/whoops": "^2.1",
+    "floatingpoint/stylist": "~0.1",
+    "guzzlehttp/guzzle": "^6.2",
+    "guzzlehttp/psr7": "^1.3",
+    "idavoll/adminlte-theme": "~2.0",
     "idavoll/core-module": "~2.0",
     "idavoll/dashboard-module": "~2.0",
-    "idavoll/user-module": "~2.0",
-    "idavoll/setting-module": "~2.0",
-    "idavoll/media-module": "~2.0",
-    "idavoll/page-module": "~2.0",
-    "idavoll/menu-module": "~2.0",
-    "idavoll/workshop-module": "~2.0",
-    "idavoll/translation-module": "~2.0",
-    "idavoll/tag-module": "~2.0",
     "idavoll/flatly-theme": "~2.0",
-    "idavoll/adminlte-theme": "~2.0"
+    "idavoll/media-module": "~2.0",
+    "idavoll/menu-module": "~2.0",
+    "idavoll/page-module": "~2.0",
+    "idavoll/setting-module": "~2.0",
+    "idavoll/tag-module": "~2.0",
+    "idavoll/translation-module": "~2.0",
+    "idavoll/user-module": "~2.0",
+    "idavoll/workshop-module": "~2.0",
+    "intervention/image": "^2.3",
+    "laracasts/presenter": "~0.2",
+    "laravel/framework": "5.3.31",
+    "laravelcollective/html": "^5.2",
+    "maatwebsite/excel": "~2.1.0",
+    "maatwebsite/laravel-sidebar": "~2.1",
+    "nicolaslopezj/searchable": "^1.0",
+    "nwidart/laravel-menus": "~0.2",
+    "nwidart/laravel-modules": "~1.0",
+    "pragmarx/google2fa": "^0.7.1",
+    "propaganistas/laravel-phone": "~2.0",
+    "pusher/pusher-php-server": "^2.3",
+    "rtconner/laravel-tagging": "^2.2",
+    "spatie/laravel-backup": "^4.0",
+    "chumper/zipper": "0.6.x",
+    "thomaswelton/laravel-gravatar": "^1.0",
+    "typicms/nestablecollection": "1.1.1",
+    "vespakoen/menu": "^3.0",
+    "predis/predis": "~1.0",
+    "unisharp/laravel-filemanager": "^1.6",
+    "unisharp/laravel-ckeditor": "^4.5",
+    "watson/bootstrap-form": "^1.0",
+    "wikimedia/composer-merge-plugin": "^1.3",
+    "yajra/laravel-datatables-oracle": "^6.0",
+    "zizaco/entrust": "5.2.x-dev",
+    "vsmoraes/laravel-pdf": "^1.0"
   },
   "require-dev": {
-    "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "phpunit/phpunit": "~4.0",
     "symfony/css-selector": "3.1.*",
@@ -44,6 +79,16 @@
     "barryvdh/laravel-debugbar": "~2.2",
     "orchestra/testbench": "^3.3",
     "league/flysystem-aws-s3-v3": "^1.0"
+  },
+  "extra": {
+    "merge-plugin": {
+      "include": [
+        "Modules/*/composer.json"
+      ]
+    },
+    "branch-alias": {
+      "dev-2.0": "2.0.x-dev"
+    }
   },
   "autoload": {
     "classmap": [
@@ -59,11 +104,6 @@
       "tests/TestCase.php"
     ]
   },
-  "extra": {
-    "branch-alias": {
-      "dev-2.0": "2.0.x-dev"
-    }
-  },
   "scripts": {
     "post-install-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postInstall",
@@ -71,9 +111,8 @@
     ],
     "post-update-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-
-        "php artisan ide-helper:generate",
-        "php artisan ide-helper:meta",
+      "php artisan ide-helper:generate",
+      "php artisan ide-helper:meta",
       "php artisan optimize"
     ]
   }

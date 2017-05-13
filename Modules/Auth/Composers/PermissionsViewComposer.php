@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\User\Composers;
+namespace Modules\Auth\Composers;
 
-use Modules\User\Permissions\PermissionManager;
+use Modules\Auth\Permissions\PermissionManager;
 
 class PermissionsViewComposer
 {

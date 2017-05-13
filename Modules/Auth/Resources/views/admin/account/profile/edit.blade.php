@@ -2,11 +2,11 @@
 
 @section('content-header')
 <h1>
-    {{ trans('user::users.title.edit-profile') }}
+    {{ trans('auth::users.title.edit-profile') }}
 </h1>
 <ol class="breadcrumb">
     <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li class="active">{{ trans('user::users.breadcrumb.edit-profile') }}</li>
+    <li class="active">{{ trans('auth::users.breadcrumb.edit-profile') }}</li>
 </ol>
 @stop
 
@@ -16,34 +16,34 @@
     <div class="col-md-12">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#account_tab" data-toggle="tab">{{ trans('user::users.tabs.data') }}</a></li>
-                <li class=""><a href="#password_tab" data-toggle="tab">{{ trans('user::users.tabs.new password') }}</a></li>
+                <li class="active"><a href="#account_tab" data-toggle="tab">{{ trans('auth::users.tabs.data') }}</a></li>
+                <li class=""><a href="#password_tab" data-toggle="tab">{{ trans('auth::users.tabs.new password') }}</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="account_tab">
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-4">
-                                {{ Form::normalInput('first_name', trans('user::users.form.first-name'), $errors, $user) }}
+                                {{ Form::normalInput('first_name', trans('auth::users.form.first-name'), $errors, $user) }}
                             </div>
                             <div class="col-md-4">
-                                {{ Form::normalInput('last_name', trans('user::users.form.last-name'), $errors, $user) }}
+                                {{ Form::normalInput('last_name', trans('auth::users.form.last-name'), $errors, $user) }}
                             </div>
                             <div class="col-md-4">
-                                {{ Form::normalInputOfType('email', 'email', trans('user::users.form.email'), $errors, $user) }}
+                                {{ Form::normalInputOfType('email', 'email', trans('auth::users.form.email'), $errors, $user) }}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane" id="password_tab">
                     <div class="box-body">
-                        <h4>{{ trans('user::users.new password setup') }}</h4>
+                        <h4>{{ trans('auth::users.new password setup') }}</h4>
                         <div class="row">
                             <div class="col-md-6">
-                                {{ Form::normalInputOfType('password', 'password', trans('user::users.form.new password'), $errors) }}
+                                {{ Form::normalInputOfType('password', 'password', trans('auth::users.form.new password'), $errors) }}
                             </div>
                             <div class="col-md-6">
-                                {{ Form::normalInputOfType('password', 'password_confirmation', trans('user::users.form.new password confirmation'), $errors) }}
+                                {{ Form::normalInputOfType('password', 'password_confirmation', trans('auth::users.form.new password confirmation'), $errors) }}
                             </div>
                         </div>
                     </div>

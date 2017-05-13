@@ -2,11 +2,11 @@
 
 @section('content-header')
     <h1>
-        {{ trans('user::users.api-keys') }}
+        {{ trans('auth::users.api-keys') }}
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li class="active">{{ trans('user::users.api-keys') }}</li>
+        <li class="active">{{ trans('auth::users.api-keys') }}</li>
     </ol>
 
 @stop
@@ -17,13 +17,13 @@
             <div class="row">
                 <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
                     <a href="{{ route('admin.account.api.create') }}" class="btn btn-primary btn-flat">
-                        <i class="fa fa-plus"></i> {{ trans('user::users.generate new api key') }}
+                        <i class="fa fa-plus"></i> {{ trans('auth::users.generate new api key') }}
                     </a>
                 </div>
             </div>
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{ trans('user::users.your api keys') }}</h3>
+                    <h3 class="box-title">{{ trans('auth::users.your api keys') }}</h3>
                 </div>
                 <div class="box-body">
                     <div class="col-md-4">
@@ -34,7 +34,7 @@
                                         {!! Form::open(['route' => ['admin.account.api.destroy', $token->id], 'method' => 'delete', 'class' => '']) !!}
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-danger btn-flat" onclick="return confirm('{{ trans('user::users.delete api key confirm') }}')">
+                                                <button type="submit" class="btn btn-danger btn-flat" onclick="return confirm('{{ trans('auth::users.delete api key confirm') }}')">
                                                     <i class="fa fa-times" aria-hidden="true"></i>
                                                 </button>
                                             </span>
@@ -50,7 +50,7 @@
                                 <?php endforeach; ?>
                             </ul>
                         <?php else: ?>
-                            <p>{{ trans('user::users.you have no api keys') }} <a href="{{ route('admin.account.api.create') }}">{{ trans('user::users.generate one') }}</a></p>
+                            <p>{{ trans('auth::users.you have no api keys') }} <a href="{{ route('admin.account.api.create') }}">{{ trans('auth::users.generate one') }}</a></p>
                         <?php endif; ?>
                     </div>
                 </div>

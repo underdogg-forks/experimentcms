@@ -21,16 +21,16 @@
                             <div class="col-md-6">
                                 <h4 class="pull-left">{{ ucfirst($subPermissionTitle) }}</h4>
                                 <p class="pull-right" style="margin-top: 10px;">
-                                    <a href="" class="jsSelectAllAllow">{{ trans('user::roles.allow all')}}</a> |
-                                    <a href="" class="jsSelectAllDeny">{{ trans('user::roles.deny all')}}</a> |
-                                    <a href="" class="jsSelectAllInherit">{{ trans('user::roles.inherit all')}}</a>
+                                    <a href="" class="jsSelectAllAllow">{{ trans('auth::roles.allow all')}}</a> |
+                                    <a href="" class="jsSelectAllDeny">{{ trans('auth::roles.deny all')}}</a> |
+                                    <a href="" class="jsSelectAllInherit">{{ trans('auth::roles.inherit all')}}</a>
                                 </p>
                             </div>
                         </div>
                         <div class="row">
                             <?php foreach ($permissionActions as $permissionAction => $permissionLabel): ?>
                             <div class="col-md-12">
-                                @include('user::admin.partials.permission-part')
+                                @include('auth::admin.partials.permission-part')
                             </div>
                             <?php endforeach; ?>
                         </div>
@@ -40,4 +40,4 @@
         </div>
     </div>
 </div>
-@include('user::admin.partials.permissions-script')
+@include('auth::admin.partials.permissions-script')

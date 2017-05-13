@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Contracts;
+namespace Modules\Auth\Contracts;
 
 interface Authentication
 {

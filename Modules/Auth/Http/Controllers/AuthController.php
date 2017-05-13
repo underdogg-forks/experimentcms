@@ -2,6 +2,7 @@
 
 namespace Modules\Auth\Http\Controllers;
 
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Modules\Core\Http\Controllers\BasePublicController;
 use Modules\Auth\Exceptions\InvalidOrExpiredResetCode;
 use Modules\Auth\Exceptions\UserNotFoundException;
@@ -21,12 +22,13 @@ class AuthController extends Controller
 
     public function __construct()
     {
-        parent::__construct();
+        //parent::__construct();
     }
 
     public function getLogin()
     {
-        return view('user::public.login');
+        //dd('yes');
+        return view('auth::public.login');
     }
 
     public function postLogin(LoginRequest $request)
@@ -35,12 +37,12 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-        $remember = (bool) $request->get('remember_me', false);
+        $remember = (bool)$request->get('remember_me', false);
 
         $error = $this->auth->login($credentials, $remember);
         if (!$error) {
             return redirect()->intended()
-                ->withSuccess(trans('user::messages.successfully logged in'));
+                ->withSuccess(trans('auth::messages.successfully logged in'));
         }
 
         return redirect()->back()->withInput()->withError($error);
@@ -48,7 +50,7 @@ class AuthController extends Controller
 
     public function getRegister()
     {
-        return view('user::public.register');
+        return view('auth::public.register');
     }
 
     public function postRegister(RegisterRequest $request)
@@ -56,7 +58,7 @@ class AuthController extends Controller
         app(UserRegistration::class)->register($request->all());
 
         return redirect()->route('register')
-            ->withSuccess(trans('user::messages.account created check email for activation'));
+            ->withSuccess(trans('auth::messages.account created check email for activation'));
     }
 
     public function getLogout()
@@ -70,16 +72,16 @@ class AuthController extends Controller
     {
         if ($this->auth->activate($userId, $code)) {
             return redirect()->route('login')
-                ->withSuccess(trans('user::messages.account activated you can now login'));
+                ->withSuccess(trans('auth::messages.account activated you can now login'));
         }
 
         return redirect()->route('register')
-            ->withError(trans('user::messages.there was an error with the activation'));
+            ->withError(trans('auth::messages.there was an error with the activation'));
     }
 
     public function getReset()
     {
-        return view('user::public.reset.begin');
+        return view('auth::public.reset.begin');
     }
 
     public function postReset(ResetRequest $request)
@@ -88,16 +90,16 @@ class AuthController extends Controller
             app(UserResetter::class)->startReset($request->all());
         } catch (UserNotFoundException $e) {
             return redirect()->back()->withInput()
-                ->withError(trans('user::messages.no user found'));
+                ->withError(trans('auth::messages.no user found'));
         }
 
         return redirect()->route('reset')
-            ->withSuccess(trans('user::messages.check email to reset password'));
+            ->withSuccess(trans('auth::messages.check email to reset password'));
     }
 
     public function getResetComplete()
     {
-        return view('user::public.reset.complete');
+        return view('auth::public.reset.complete');
     }
 
     public function postResetComplete($userId, $code, ResetCompleteRequest $request)
@@ -108,13 +110,13 @@ class AuthController extends Controller
             );
         } catch (UserNotFoundException $e) {
             return redirect()->back()->withInput()
-                ->withError(trans('user::messages.user no longer exists'));
+                ->withError(trans('auth::messages.user no longer exists'));
         } catch (InvalidOrExpiredResetCode $e) {
             return redirect()->back()->withInput()
-                ->withError(trans('user::messages.invalid reset code'));
+                ->withError(trans('auth::messages.invalid reset code'));
         }
 
         return redirect()->route('login')
-            ->withSuccess(trans('user::messages.password reset'));
+            ->withSuccess(trans('auth::messages.password reset'));
     }
 }

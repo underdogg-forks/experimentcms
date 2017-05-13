@@ -2,10 +2,10 @@
 
 view()->composer(
     [
-        'user::admin.partials.permissions',
-        'user::admin.partials.permissions-create',
+        'auth::admin.partials.permissions',
+        'auth::admin.partials.permissions-create',
     ],
-    'Modules\User\Composers\PermissionsViewComposer'
+    'Modules\Auth\Composers\PermissionsViewComposer'
 );
 
 view()->composer(
@@ -15,5 +15,5 @@ view()->composer(
         'layouts.master',
         'partials.*',
     ],
-    'Modules\User\Composers\UsernameViewComposer'
+    'Modules\Auth\Composers\UsernameViewComposer'
 );

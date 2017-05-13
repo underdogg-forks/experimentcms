@@ -11,7 +11,7 @@
         {{ $theme->getName() }} <small>{{ trans('workshop::themes.theme') }}</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('user::users.breadcrumb.home') }}</a></li>
+        <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('auth::users.breadcrumb.home') }}</a></li>
         <li><a href="{{ route('admin.workshop.themes.index') }}">{{ trans('workshop::themes.breadcrumb.themes') }}</a></li>
         <li class="active">{{ trans('workshop::themes.viewing theme', ['theme' => $theme->getName()]) }}</li>
     </ol>

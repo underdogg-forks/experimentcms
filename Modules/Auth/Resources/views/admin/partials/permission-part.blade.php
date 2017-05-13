@@ -14,17 +14,17 @@
         <label class="radio-inline" for="{{ $subPermissionTitle. '.' . $permissionAction }}_allow">
             <input type="radio" value="1" id="{{ $subPermissionTitle. '.' . $permissionAction }}_allow" name="permissions[{{ $subPermissionTitle. '.' . $permissionAction }}]"
                 {{ isset($current) && $current === 1 ? 'checked' : '' }} class="flat-blue jsAllow">
-            {{ trans('user::roles.allow') }}
+            {{ trans('auth::roles.allow') }}
         </label>
         <label class="radio-inline" for="{{ $subPermissionTitle. '.' . $permissionAction }}_deny">
             <input type="radio" value="-1" id="{{ $subPermissionTitle. '.' . $permissionAction }}_deny" name="permissions[{{ $subPermissionTitle. '.' . $permissionAction }}]"
                     {{ isset($current) && $current === -1 ? 'checked' : '' }} class="flat-blue jsDeny">
-            {{ trans('user::roles.deny') }}
+            {{ trans('auth::roles.deny') }}
         </label>
         <label class="radio-inline" for="{{ $subPermissionTitle. '.' . $permissionAction }}_inherit">
             <input type="radio" value="0" id="{{ $subPermissionTitle. '.' . $permissionAction }}_inherit" name="permissions[{{ $subPermissionTitle. '.' . $permissionAction }}]"
                     {{ isset($current) && $current === 0 ? 'checked' : '' }} {{ isset($current) === false ? 'checked' : '' }} class="flat-blue jsInherit">
-            {{ trans('user::roles.inherit') }}
+            {{ trans('auth::roles.inherit') }}
         </label>
     </div>
 </div>

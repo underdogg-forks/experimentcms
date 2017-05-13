@@ -1,28 +1,28 @@
 {
-    "name": "nwidart/auth-module",
-    "description": "",
-    "authors": [
-        {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
-        }
-    ],
+  "name": "nwidart/auth-module",
+  "description": "",
+  "authors": [
+    {
+      "name": "Nicolas Widart",
+      "email": "n.widart@gmail.com"
+    }
+  ],
   "minimum-stability": "dev",
   "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "Modules\\Auth\\": "",
-      "Modules\\": "Modules/"
-        },
-  "autoload-dev": {
+  "autoload": {
     "psr-4": {
-      "Modules\\Auth\\Tests\\": "Tests"
+      "Modules\\Auth\\": "",
+      "Modules\\": "Modules/"
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Modules\\Auth\\Tests\\": "Tests"
+      }
+    },
+    "extra": {
+      "branch-alias": {
+        "dev-2.0": "2.0.x-dev"
+      }
     }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-2.0": "2.0.x-dev"
-    }
-  },
-    }
+  }
 }

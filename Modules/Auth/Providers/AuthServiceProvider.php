@@ -4,18 +4,18 @@ namespace Modules\Auth\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
-use Modules\User\Contracts\Authentication;
-use Modules\User\Models\UserToken;
-use Modules\User\Http\Middleware\AuthorisedApiToken;
-use Modules\User\Http\Middleware\AuthorisedApiTokenAdmin;
-use Modules\User\Http\Middleware\GuestMiddleware;
-use Modules\User\Http\Middleware\LoggedInMiddleware;
-use Modules\User\Http\Middleware\TokenCan;
-use Modules\User\Repositories\Cache\CacheUserTokenDecorator;
-use Modules\User\Repositories\Eloquent\EloquentUserTokenRepository;
-use Modules\User\Repositories\RoleRepository;
-use Modules\User\Repositories\UserRepository;
-use Modules\User\Repositories\UserTokenRepository;
+use Modules\Auth\Contracts\Authentication;
+use Modules\Auth\Models\UserToken;
+use Modules\Auth\Http\Middleware\AuthorisedApiToken;
+use Modules\Auth\Http\Middleware\AuthorisedApiTokenAdmin;
+use Modules\Auth\Http\Middleware\GuestMiddleware;
+use Modules\Auth\Http\Middleware\LoggedInMiddleware;
+use Modules\Auth\Http\Middleware\TokenCan;
+use Modules\Auth\Repositories\Cache\CacheUserTokenDecorator;
+use Modules\Auth\Repositories\Eloquent\EloquentUserTokenRepository;
+use Modules\Auth\Repositories\RoleRepository;
+use Modules\Auth\Repositories\UserRepository;
+use Modules\Auth\Repositories\UserTokenRepository;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -32,7 +32,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $middleware = [
-        'auth.guest' => GuestMiddleware::class,
+        //'auth.guest' => GuestMiddleware::class,
         'logged.in' => LoggedInMiddleware::class,
         'api.token' => AuthorisedApiToken::class,
         'api.token.admin' => AuthorisedApiTokenAdmin::class,

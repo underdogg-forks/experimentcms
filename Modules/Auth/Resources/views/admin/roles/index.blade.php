@@ -2,11 +2,11 @@
 
 @section('content-header')
 <h1>
-    {{ trans('user::roles.title.roles') }}
+    {{ trans('auth::roles.title.roles') }}
 </h1>
 <ol class="breadcrumb">
     <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li class="active">{{ trans('user::roles.breadcrumb.roles') }}</li>
+    <li class="active">{{ trans('auth::roles.breadcrumb.roles') }}</li>
 </ol>
 @stop
 
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
                 <a href="{{ URL::route('admin.user.role.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
-                    <i class="fa fa-pencil"></i> {{ trans('user::roles.button.new-role') }}
+                    <i class="fa fa-pencil"></i> {{ trans('auth::roles.button.new-role') }}
                 </a>
             </div>
         </div>
@@ -29,9 +29,9 @@
                     <thead>
                         <tr>
                             <td>Id</td>
-                            <th>{{ trans('user::roles.table.name') }}</th>
-                            <th>{{ trans('user::users.table.created-at') }}</th>
-                            <th data-sortable="false">{{ trans('user::users.table.actions') }}</th>
+                            <th>{{ trans('auth::roles.table.name') }}</th>
+                            <th>{{ trans('auth::users.table.created-at') }}</th>
+                            <th data-sortable="false">{{ trans('auth::users.table.actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,9 +66,9 @@
                     <tfoot>
                         <tr>
                             <td>Id</td>
-                            <th>{{ trans('user::roles.table.name') }}</th>
-                            <th>{{ trans('user::users.table.created-at') }}</th>
-                            <th>{{ trans('user::users.table.actions') }}</th>
+                            <th>{{ trans('auth::roles.table.name') }}</th>
+                            <th>{{ trans('auth::users.table.created-at') }}</th>
+                            <th>{{ trans('auth::users.table.actions') }}</th>
                         </tr>
                     </tfoot>
                 </table>

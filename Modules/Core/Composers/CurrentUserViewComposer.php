@@ -3,7 +3,7 @@
 namespace Modules\Core\Composers;
 
 use Illuminate\Contracts\View\View;
-use Modules\User\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 
 class CurrentUserViewComposer
 {
@@ -12,13 +12,14 @@ class CurrentUserViewComposer
      */
     private $auth;
 
-    public function __construct(Authentication $auth)
+    //Authentication $auth
+    public function __construct()
     {
-        $this->auth = $auth;
+        //$this->auth = $auth;
     }
 
     public function compose(View $view)
     {
-        $view->with('currentUser', $this->auth->user());
+        //$view->with('currentUser', $this->auth->user());
     }
 }

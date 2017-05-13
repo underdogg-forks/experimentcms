@@ -4,7 +4,9 @@ make:migration
 module:migrate
 module:make-migration
 Example : php artisan module:make-migration create_companies_table Core
-
+module:make-migration
+Example : 
+php artisan module:make-migration Auth create_users_table
 
 module:publish-migration
 
@@ -54,6 +56,3 @@ module:make-listener
 module:make-event
 module:enable
 module:disable
-module:make-migration
-Example : 
-php artisan module:make-migration Auth create_users_table

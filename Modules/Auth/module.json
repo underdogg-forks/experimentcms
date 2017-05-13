@@ -7,8 +7,8 @@
     "order": 0,
     "providers": [
         "Modules\\Auth\\Providers\\AuthServiceProvider",
-        "Modules\\User\\Providers\\EventServiceProvider",
-        "Modules\\User\\Providers\\RouteServiceProvider"
+        "Modules\\Auth\\Providers\\EventServiceProvider",
+        "Modules\\Auth\\Providers\\RouteServiceProvider"
     ],
     "aliases": {},
     "files": [

@@ -4,7 +4,7 @@ namespace Modules\Core\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
-use Modules\User\Contracts\Authentication;
+use Modules\Auth\Contracts\Authentication;
 
 class PermissionMiddleware
 {

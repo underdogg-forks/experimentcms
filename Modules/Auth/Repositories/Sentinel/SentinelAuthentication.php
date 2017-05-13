@@ -7,7 +7,7 @@ use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Reminder;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
-use Modules\User\Contracts\Authentication;
+use Modules\Auth\Contracts\Authentication;
 use Modules\User\Events\UserHasActivatedAccount;
 
 class SentinelAuthentication implements Authentication
@@ -25,13 +25,13 @@ class SentinelAuthentication implements Authentication
                 return false;
             }
 
-            return trans('user::users.invalid login or password');
+            return trans('auth::users.invalid login or password');
         } catch (NotActivatedException $e) {
-            return trans('user::users.account not validated');
+            return trans('auth::users.account not validated');
         } catch (ThrottlingException $e) {
             $delay = $e->getDelay();
 
-            return trans('user::users.account is blocked', ['delay' => $delay]);
+            return trans('auth::users.account is blocked', ['delay' => $delay]);
         }
     }
 

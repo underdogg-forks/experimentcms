@@ -19,7 +19,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
     ];
 
     protected $loginNames = ['email'];
@@ -45,7 +47,8 @@ class User extends Authenticatable
      * @param  mixed $role
      * @return bool
      */
-    public function inRole($role);
+    public function inRole($role)
+    {}
 
 
     public function hasRoleId($roleId)

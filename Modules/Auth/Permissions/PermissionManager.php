@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Permissions;
+namespace Modules\Auth\Permissions;
 
 use Nwidart\Modules\Module;
 

@@ -6,7 +6,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('dashboard.index') }}"><i
-                        class="fa fa-dashboard"></i> {{ trans('user::users.breadcrumb.home') }}</a></li>
+                        class="fa fa-dashboard"></i> {{ trans('auth::users.breadcrumb.home') }}</a></li>
         <li class="active">{{ trans('workshop::themes.breadcrumb.themes') }}</li>
     </ol>
 @stop

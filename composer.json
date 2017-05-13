@@ -62,10 +62,10 @@
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "~2.2",
+    "fzaninotto/faker": "^1.6",
     "league/flysystem-aws-s3-v3": "^1.0",
     "mockery/mockery": "0.9.*",
     "orchestra/testbench": "^3.3",
-
     "phpunit/phpunit": "~4.0",
     "symfony/css-selector": "3.1.*",
     "symfony/dom-crawler": "3.1.*"

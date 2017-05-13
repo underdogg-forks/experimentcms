@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\User\Http\Middleware;
+namespace Modules\Auth\Http\Middleware;
 
-use Modules\User\Contracts\Authentication;
+//use Modules\User\Contracts\Authentication;
 
 /**
  * Class LoggedInMiddleware
@@ -16,9 +16,9 @@ class LoggedInMiddleware
      */
     private $auth;
 
-    public function __construct(Authentication $auth)
+    public function __construct()
     {
-        $this->auth = $auth;
+        //$this->auth = $auth;
     }
 
     /**

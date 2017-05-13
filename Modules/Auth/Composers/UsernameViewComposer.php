@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\User\Composers;
+namespace Modules\Auth\Composers;
 
 use Illuminate\Contracts\View\View;
-use Modules\User\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 
 class UsernameViewComposer
 {
@@ -12,13 +12,14 @@ class UsernameViewComposer
      */
     private $auth;
 
-    public function __construct(Authentication $auth)
+    //Authentication $auth
+    public function __construct()
     {
-        $this->auth = $auth;
+        //$this->auth = $auth;
     }
 
     public function compose(View $view)
     {
-        $view->with('user', $this->auth->user());
+        //$view->with('user', $this->auth->user());
     }
 }

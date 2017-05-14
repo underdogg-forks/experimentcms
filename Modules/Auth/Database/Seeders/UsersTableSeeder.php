@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         static $password;
-        //$faker = Faker::create();
+        $faker = Faker::create();
         //dd($faker->name);
         /*\DB::table('users')->insert(array (
             0 =>
@@ -47,12 +47,15 @@ class UsersTableSeeder extends Seeder
         });*/
 
 
-        /*for($i = 0; $i < 100; $i++) {
-            \Modules\Auth\Models\User::create([
-                'name' => $faker->name,
-                'email' => $faker->unique()->safeEmail,
-                'password' => $password ?: $password = bcrypt('secret'),
-            ]);
-        }*/
+        for($i = 0; $i < 1000; $i++) {
+
+
+                \DB::table('users')->insert([
+                    'name' => $faker->name,
+                    'email' => $faker->email,
+                    'password' => bcrypt('secret'),
+                ]);
+
+        }
     }
 }

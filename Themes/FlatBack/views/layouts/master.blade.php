@@ -11,7 +11,7 @@
 
     <title>Master Master</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap core CSS -->
     <link href="{{ asset("themes/flatback/css/bootstrap.min.css") }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{{ asset("themes/flatback/css/font-awesome.min.css") }}" rel="stylesheet">

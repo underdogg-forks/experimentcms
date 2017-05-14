@@ -1,5 +1,5 @@
-@extends('layouts.account')
- 
+@extends('layouts.public')
+
 @section('content')
-	<h1>You don't have permission.</h1>
+    <h1>You don't have permission.</h1>
 @endsection

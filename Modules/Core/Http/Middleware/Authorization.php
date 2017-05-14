@@ -4,7 +4,8 @@ namespace Modules\Core\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\Auth\Contracts\Authentication;
+use Illuminate\Support\Facades\Auth;
+//use Modules\Auth\Contracts\Authentication;
 
 /**
  * Class Authorization
@@ -22,9 +23,9 @@ class Authorization
      * Authorization constructor.
      * @param Authentication $auth
      */
-    public function __construct(Authentication $auth)
+    public function __construct()
     {
-        $this->auth = $auth;
+        //$this->auth = $auth;
     }
 
     /**
@@ -35,7 +36,7 @@ class Authorization
      */
     public function handle($request, \Closure $next, $permission)
     {
-        if ($this->auth->hasAccess($permission) === false) {
+        if (Auth::user()->hasAccess($permission) === false) {
             return $this->handleUnauthorizedRequest($request, $permission);
         }
 

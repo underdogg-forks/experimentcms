@@ -16,9 +16,9 @@ class AuthDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(UsersTableSeeder::class);
-        $this->call("PermissionTableSeeder");
-
+        //$this->call(UsersTableSeeder::class);
+        //$this->call(PermissionTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
 
     }
 }

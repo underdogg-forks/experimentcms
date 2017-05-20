@@ -579,8 +579,8 @@
 
 
 <li class="sub-menu">
-    <a href="{!! route('backend.staff.index') !!}"
-       class="nav-link nav-toggle {!! Request::is('staff*') ? 'active' : '' !!}">
+    <a href=""
+      >
         <i class="fa fa-edit"></i>
         <span class="title">Staff</span>
     </a>

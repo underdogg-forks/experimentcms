@@ -22,6 +22,7 @@ class PublicController extends BasePublicController
     public function __construct(PageRepository $page, Application $app)
     {
         parent::__construct();
+        $this->middleware('auth');
         $this->page = $page;
         $this->app = $app;
     }

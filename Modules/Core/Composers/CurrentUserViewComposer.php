@@ -3,7 +3,7 @@
 namespace Modules\Core\Composers;
 
 use Illuminate\Contracts\View\View;
-//use Modules\Auth\Contracts\Authentication;
+////use Modules\Auth\Contracts\Authentication;
 
 class CurrentUserViewComposer
 {

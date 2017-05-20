@@ -3,7 +3,7 @@
 namespace Modules\Auth\Http\Middleware;
 use Auth;
 use Illuminate\Support\Facades\Redirect;
-use Modules\Auth\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 
 class GuestMiddleware
 {

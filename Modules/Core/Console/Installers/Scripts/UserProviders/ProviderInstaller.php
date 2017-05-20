@@ -8,7 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 use Modules\Core\Console\Installers\SetupScript;
 use Modules\Core\Providers\CoreServiceProvider;
 use Modules\Core\Services\Composer;
-use Modules\Auth\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 use Modules\User\Repositories\RoleRepository;
 use Modules\User\Repositories\UserRepository;
 

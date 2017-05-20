@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Dashboard\Repositories\WidgetRepository;
-use Modules\Auth\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 use Nwidart\Modules\Repository;
 
 class DashboardController extends AdminBaseController
@@ -25,12 +25,13 @@ class DashboardController extends AdminBaseController
      * @param WidgetRepository $widget
      * @param Authentication $auth
      */
-    public function __construct(Repository $modules, WidgetRepository $widget, Authentication $auth)
+    public function __construct(Repository $modules, WidgetRepository $widget)
     {
         parent::__construct();
-        $this->bootWidgets($modules);
+        $this->middleware('auth');
+        //$this->bootWidgets($modules);
         $this->widget = $widget;
-        $this->auth = $auth;
+        //$this->auth = $auth;
     }
 
     /**
@@ -41,12 +42,12 @@ class DashboardController extends AdminBaseController
     {
         $this->requireAssets();
 
-        $widget = $this->widget->findForUser($this->auth->id());
+        //$widget = $this->widget->findForUser($this->auth->id());
 
         $customWidgets = json_encode(null);
-        if ($widget) {
+        /*if ($widget) {
             $customWidgets = $widget->widgets;
-        }
+        }*/
 
         return view('dashboard::admin.dashboard', compact('customWidgets'));
     }
@@ -64,7 +65,7 @@ class DashboardController extends AdminBaseController
             return Response::json([false]);
         }
 
-        $this->widget->updateOrCreateForUser($widgets, $this->auth->id());
+        //$this->widget->updateOrCreateForUser($widgets, $this->auth->id());
 
         return Response::json([true]);
     }
@@ -74,13 +75,13 @@ class DashboardController extends AdminBaseController
      */
     public function reset()
     {
-        $widget = $this->widget->findForUser($this->auth->id());
+        //$widget = $this->widget->findForUser($this->auth->id());
 
-        if (!$widget) {
+        /*if (!$widget) {
             return redirect()->route('dashboard.index')->with('warning', trans('dashboard::dashboard.reset not needed'));
-        }
+        }*/
 
-        $this->widget->destroy($widget);
+        //$this->widget->destroy($widget);
 
         return redirect()->route('dashboard.index')->with('success', trans('dashboard::dashboard.dashboard reset'));
     }

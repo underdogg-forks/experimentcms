@@ -4,7 +4,7 @@ namespace Modules\Auth\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
-use Modules\Auth\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 use Modules\Auth\Models\UserToken;
 use Modules\Auth\Http\Middleware\AuthorisedApiToken;
 use Modules\Auth\Http\Middleware\AuthorisedApiTokenAdmin;

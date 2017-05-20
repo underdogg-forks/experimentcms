@@ -5,7 +5,7 @@ namespace Modules\Core\Http\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-//use Modules\Auth\Contracts\Authentication;
+////use Modules\Auth\Contracts\Authentication;
 
 /**
  * Class Authorization

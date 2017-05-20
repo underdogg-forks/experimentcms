@@ -2,7 +2,7 @@
 
 namespace Modules\User\Services;
 
-use Modules\Auth\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 use Modules\User\Events\UserHasRegistered;
 use Modules\User\Repositories\RoleRepository;
 

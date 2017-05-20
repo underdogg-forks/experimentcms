@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Session\Store;
 use Illuminate\Support\Facades\Auth;
-//use Modules\Auth\Contracts\Authentication;
+////use Modules\Auth\Contracts\Authentication;
 
 class AdminMiddleware
 {

@@ -3,7 +3,7 @@
 namespace Modules\User\Events\Handlers;
 
 use Illuminate\Contracts\Mail\Mailer;
-use Modules\Auth\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 use Modules\User\Events\UserHasRegistered;
 use Modules\User\Emails\WelcomeEmail;
 

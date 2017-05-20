@@ -8,18 +8,17 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>InfyOm Generator</title>
+    <title>Master Master</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('themes/flatback/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('themes/flatback/css/bootstrap-reset.css')}}" rel="stylesheet">
     <!--external css-->
-    <link href="{{asset('assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet"/>
+    <link href="{{asset('themes/flatback/css/font-awesome.min.css')}}" rel="stylesheet"/>
 
 
     <!--right slidebar-->
     <link href="{{asset('themes/flatback/css/slidebars.css')}}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/bootstrap-fileupload/bootstrap-fileupload.css')}}"/>
 
     <!-- Custom styles for this template -->
 
@@ -43,7 +42,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="javascript:" class="logo">InfyOm<span>Generator</span></a>
+        <a href="javascript:" class="logo">Master Backend</span></a>
         <!--logo end-->
 
         <div class="top-nav ">
@@ -116,17 +115,12 @@
 <!-- js placed at the end of the document so the pages load faster -->
 <script class="include" type="text/javascript"
         src="{{asset('themes/flatback/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('themes/flatback/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
+
 <script src="{{asset('themes/flatback/js/respond.min.js')}}"></script>
 <script src="{{asset('themes/flatback/js/slidebars.min.js')}}"></script>
 <script src="{{asset('themes/flatback/js/common-scripts.js')}}"></script>
 
-<!--custom checkbox and radio-->
-<script type="text/javascript" src="{{asset('themes/flatback/js/ga.js')}}"></script>
-
-<!--script for this page-->
-<script src="{{asset('themes/flatback/js/form-component.js')}}"></script>
-@yield('scripts')
+@stack('scripts')
 
 </body>
 </html>

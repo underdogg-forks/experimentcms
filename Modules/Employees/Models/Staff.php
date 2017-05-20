@@ -24,9 +24,9 @@ class Staff extends Model
 
 
     public $fillable = [
-        'email',
         'firstname',
         'lastname',
+        'email',
         'facebook',
         'linkedin',
         'phonenumber',

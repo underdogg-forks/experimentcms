@@ -28,6 +28,7 @@ class StaffDataTable extends DataTable
     public function query()
     {
         $staff = Staff::query();
+        dd($staff);
 
         return $this->applyScopes($staff);
     }

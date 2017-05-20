@@ -48,7 +48,7 @@ abstract class RoutingServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace], function (Router $router) {
+        $router->group(['namespace' => ''], function (Router $router) {
             $this->loadApiRoutes($router);
         });
 
@@ -104,9 +104,7 @@ abstract class RoutingServiceProvider extends ServiceProvider
 
         if ($api && file_exists($api)) {
             $router->group([
-                'namespace' => 'Api',
-                'prefix' => 'api',
-                'middleware' => config('asgard.core.core.middleware.api', []),
+                'middleware' => ['api'],
             ], function (Router $router) use ($api) {
                 require $api;
             });

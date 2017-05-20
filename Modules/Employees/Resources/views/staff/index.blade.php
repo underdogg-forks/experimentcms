@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.gentel')
 
 @section('content')
     <div class="row">
@@ -10,10 +10,51 @@
                     <br><br>
                 </header>
                 <div class="panel-body">
-                   @include('employees::staff.table')
+                    <table class="table table-hover table-bordered table-striped" id="staff-table">
+                        <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+
+                        <tfoot>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </section>
         </div>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+    $(function () {
+        $('#staff-table').DataTable({
+            processing: true,
+            serverSide: true,
+            "pageLength": 50,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            ajax: '{!! route('api.staff.data') !!}',
+            columns: [
+                {data: 'firstname', name: 'firstname'},
+                {data: 'lastname', name: 'lastname'},
+                {data: 'email', name: 'email'},
+                {data: 'edit', name: 'edit', orderable: false, searchable: false},
+                {data: 'delete', name: 'delete', orderable: false, searchable: false},
+            ]
+        });
+    });
+</script>
+@endpush
 

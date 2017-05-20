@@ -3,6 +3,9 @@
 namespace Modules\Employees\Http\Controllers;
 
 use Modules\Employees\DataTables\StaffDataTable;
+use Modules\Employees\Models\Staff;
+use Yajra\Datatables\Services\DataTable;
+use Yajra\Datatables\Facades\Datatables;
 use App\Http\Requests;
 use Modules\Employees\Http\Requests\CreateStaffRequest;
 use Modules\Employees\Http\Requests\UpdateStaffRequest;
@@ -31,6 +34,50 @@ class StaffController extends Controller
     {
         return $staffDataTable->render('employees::staff.index');
     }
+
+    public function anyData()
+    {
+        //->with('addresses')
+        $staff = Staff::select(['id', 'firstname', 'lastname', 'email']);
+/*        $relations = Relation::with(array('addresses'=>function($query){
+            $query->addSelect(array('id','address', 'housenumber', 'postalcode', 'city_id', 'country_id'));
+        }))->get('id', 'name', 'shortname', 'relationtype_id');*/
+
+/*
+// Example: We only want the title of the posts.
+$authors = Author::with(array('posts' => function($query)
+{
+    // Notice the addition of the author_id field!
+    $query->addSelect(array('title', 'author_id'));
+}))->get();
+ **/
+
+
+
+        return Datatables::of($staff)
+            ->addColumn('firstname', function ($staff) {
+                return '<a href="backend/staff/' . $staff->id . '" ">' . $staff->firstname . '</a>';
+            })
+            ->addColumn('lastname', function ($staff) {
+                return '<a href="backend/staff/' . $staff->id . '" ">' . $staff->lastname . '</a>';
+            })
+            ->addColumn('email', function ($staff) {
+                return '<a href="backend/staff/' . $staff->id . '" ">' . $staff->email . '</a>';
+            })
+
+            ->add_column('edit', '
+                <a href="{{ route(\'backend.staff.edit\', $id) }}" class="btn btn-success" >Edit</a>')
+            ->add_column('delete', '
+                <form action="{{ route(\'backend.staff.destroy\', $id) }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" name="submit" value="Delete" class="btn btn-danger" onClick="return confirm(\'Are you sure?\')"">
+
+            {{csrf_field()}}
+            </form>')
+            ->make(true);
+    }
+
+
 
     /**
      * Show the form for creating a new Staff.

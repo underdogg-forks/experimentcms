@@ -86,8 +86,8 @@ abstract class RoutingServiceProvider extends ServiceProvider
 
         if ($backend && file_exists($backend)) {
             $router->group([
-                'namespace' => 'Admin',
-                'prefix' => config('asgard.core.core.admin-prefix'),
+                'namespace' => '',
+                'prefix' => '',
                 'middleware' => config('asgard.core.core.middleware.backend', []),
             ], function (Router $router) use ($backend) {
                 require $backend;

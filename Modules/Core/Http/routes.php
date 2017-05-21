@@ -2,6 +2,15 @@
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
+Route::get('/', [
+    'uses' => 'PublicController@homepage',
+    'as' => 'homepage',
+    'middleware' => config('asgard.page.config.middleware'),
+]);
+
+
+
+
 
 Route::get('staff/profile', ['as' => 'staff.profile', 'uses' => 'StaffController@profile']);
 Route::patch('staff/profile', ['as' => 'staff.profile.patch', 'uses' => 'StaffController@profileUpdate']);

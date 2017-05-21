@@ -5,9 +5,9 @@ use Illuminate\Routing\Router;
 
 Route::group(['prefix' => '/backend'], function () {
 
-    Route::get('', ['as' => 'adminpanel', 'uses' => '\Modules\Core\Http\Controllers\BackendController@index']);
-    Route::get('/', ['as' => 'dashboard.index', 'uses' => '\Modules\Core\Http\Controllers\BackendController@index']);
-    Route::get('dashboard', ['as' => 'dashboard.index', 'uses' => '\Modules\Core\Http\Controllers\BackendController@index']);
+    Route::get('', ['as' => 'adminpanel', 'uses' => '\Modules\Core\Http\Controllers\DashboardController@index']);
+    Route::get('/', ['as' => 'dashboard.index', 'uses' => '\Modules\Core\Http\Controllers\DashboardController@index']);
+    Route::get('dashboard', ['as' => 'dashboard.index', 'uses' => '\Modules\Core\Http\Controllers\DashboardController@index']);
     Route::get('job-scheduler', ['as' => 'get.job.scheduler', 'uses' => 'CronJobsController@getScheduler']); //to get ob scheduler form page
     Route::get('error-and-debugging-options', ['as' => 'err.debug.settings', 'uses' => 'Admin\helpdesk\ErrorAndDebuggingController@showSettings']);
 

@@ -28,3 +28,12 @@
         <span class="title">RolePermissions</span>
     </a>
 </li>
+
+<li class="sub-menu">
+    <a href="{!! route('backend.departments.index') !!}" class="nav-link nav-toggle {!! Request::is('departments*') ? 'active' : '' !!}">
+        <i class="fa fa-edit"></i>
+        <span class="title">Departments</span>
+    </a>
+</li>
+
+

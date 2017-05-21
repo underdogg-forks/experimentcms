@@ -17,7 +17,9 @@ class EmployeesDatabaseSeeder extends Seeder
         Model::unguard();
 
         //$this->call(StaffTableSeeder::class);
-        $this->call(TeamsTableSeeder::class);
-        // $this->call("OthersTableSeeder");
+        $this->call(DepartmentsTableSeeder::class);
+        //$this->call(TeamsTableSeeder::class);
+        //$this->call("OthersTableSeeder");
+
     }
 }

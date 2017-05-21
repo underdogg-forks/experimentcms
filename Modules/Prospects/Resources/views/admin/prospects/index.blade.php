@@ -61,8 +61,7 @@
                         </table>
                         <!-- /.box-body -->
                     </div>
-                </div>
-                <!-- /.box -->
+                </div><!-- /.box -->
             </div>
         </div>
     </div>

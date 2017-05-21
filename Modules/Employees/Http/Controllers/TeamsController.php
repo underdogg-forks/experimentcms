@@ -76,6 +76,9 @@ $authors = Author::with(array('posts' => function($query)
             })
             ->make(true);
     }
+
+
+
     /**
      * Show the form for creating a new resource.
      * @return Response

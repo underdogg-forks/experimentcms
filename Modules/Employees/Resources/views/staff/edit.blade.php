@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.gentel')
 
 @section('content')
 <div class="row">
@@ -11,7 +11,7 @@
                     <div class="row">
                        {!! Form::model($staff, ['route' => ['backend.staff.update', $staff->id], 'method' => 'patch']) !!}
 
-                        @include('staff.fields')
+                        @include('employees::staff.fields')
 
                        {!! Form::close() !!}
                    </div>

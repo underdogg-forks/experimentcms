@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 staff">
             <section class="panel">
                 <header class="panel-heading">
                     Staff
@@ -58,3 +58,16 @@
 </script>
 @endpush
 
+
+
+<!-- Optional bottom section for modals etc... -->
+@section('body_bottom')
+    <script language="JavaScript">
+        function toggleCheckbox() {
+            checkboxes = document.getElementsByName('chkDepartments[]');
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                checkboxes[i].checked = !checkboxes[i].checked;
+            }
+        }
+    </script>
+@endsection

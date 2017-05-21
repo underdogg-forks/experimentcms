@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.gentel')
 
 @section('content')
  <div class="row">
@@ -12,7 +12,7 @@
                     <div class="row">
                         {!! Form::open(['route' => 'backend.staff.store']) !!}
 
-                                  @include('staff.fields')
+                                  @include('employees::staff.fields')
 
                         {!! Form::close() !!}
                     </div>

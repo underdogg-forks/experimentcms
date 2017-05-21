@@ -2,9 +2,9 @@
 
 namespace Modules\Employees\Repositories;
 
-use Modules\Employees\Models\Staff;
+use Modules\Employees\Models\Team;
 
-class StaffRepository extends \Prettus\Repository\Eloquent\BaseRepository
+class TeamRepository extends \Prettus\Repository\Eloquent\BaseRepository
 {
     /**
      * @var array
@@ -48,6 +48,6 @@ class StaffRepository extends \Prettus\Repository\Eloquent\BaseRepository
      **/
     public function model()
     {
-        return Staff::class;
+        return Team::class;
     }
 }

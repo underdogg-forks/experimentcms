@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Dashboard\Http\Controllers\Admin;
+namespace Modules\Dashboard\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

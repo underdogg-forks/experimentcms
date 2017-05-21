@@ -9,7 +9,7 @@ use Modules\Dashboard\Repositories\WidgetRepository;
 //use Modules\Auth\Contracts\Authentication;
 use Nwidart\Modules\Repository;
 
-class DashboardController extends AdminBaseController
+class BackendController extends AdminBaseController
 {
     /**
      * @var WidgetRepository
@@ -29,9 +29,6 @@ class DashboardController extends AdminBaseController
     {
         parent::__construct();
         $this->middleware('auth');
-        //$this->bootWidgets($modules);
-        $this->widget = $widget;
-        //$this->auth = $auth;
     }
 
     /**
@@ -42,14 +39,8 @@ class DashboardController extends AdminBaseController
     {
         $this->requireAssets();
 
-        //$widget = $this->widget->findForUser($this->auth->id());
 
-        $customWidgets = json_encode(null);
-        /*if ($widget) {
-            $customWidgets = $widget->widgets;
-        }*/
-
-        return view('dashboard::admin.dashboard', compact('customWidgets'));
+        return view('dashboard::admin.dashboard');
     }
 
     /**

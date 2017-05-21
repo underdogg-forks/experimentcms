@@ -30,6 +30,6 @@ class EloquentWidgetRepository extends EloquentBaseRepository implements WidgetR
             return $this->update($widget, ['widgets' => $widgets]);
         }
 
-        return $this->create(['widgets' => $widgets, 'user_id' => $userId]);
+        return $this->create(['widgets' => $widgets, 'staff_id' => $userId]);
     }
 }

@@ -19,7 +19,7 @@ class CreateTimelineTable extends Migration
 
             $table->unsignedInteger('company_id');
             $table->unsignedInteger('relation_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('staff_id');
             $table->unsignedInteger('contact_id')->nullable();
             $table->unsignedInteger('payment_id')->nullable();
             $table->unsignedInteger('invoice_id')->nullable();

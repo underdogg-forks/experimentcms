@@ -86,7 +86,7 @@ return [
      */
     'relations' => [
 //        'extension' => function ($self) {
-//            return $self->belongsTo(UserExtension::class, 'user_id', 'id')->first();
+//            return $self->belongsTo(UserExtension::class, 'staff_id', 'id')->first();
 //        }
     ],
     /*

@@ -16,7 +16,7 @@ class EloquentUserTokenRepository extends EloquentBaseRepository implements User
      */
     public function allForUser($userId)
     {
-        return $this->model->where('user_id', $userId)->get();
+        return $this->model->where('staff_id', $userId)->get();
     }
 
     /**
@@ -27,7 +27,7 @@ class EloquentUserTokenRepository extends EloquentBaseRepository implements User
     {
         try {
             $uuid4 = Uuid::uuid4();
-            $userToken = $this->model->create(['user_id' => $userId, 'access_token' => $uuid4]);
+            $userToken = $this->model->create(['staff_id' => $userId, 'access_token' => $uuid4]);
         } catch (QueryException $e) {
             $this->generateFor($userId);
         }

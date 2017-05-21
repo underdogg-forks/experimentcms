@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Widget extends Model
 {
-    protected $fillable = ['widgets', 'user_id'];
+    protected $fillable = ['widgets', 'staff_id'];
     protected $table = 'dashboard__widgets';
 
     public function user()

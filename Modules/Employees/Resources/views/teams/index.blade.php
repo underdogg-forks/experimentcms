@@ -32,7 +32,7 @@
             <div class="box box-primary">
                 <div class="box-header">
                     <h2 class="box-title">Teams</h2><a href="{{route('backend.teams.create')}}"
-                                                                                   class="btn btn-primary pull-right">Create Team</a>
+                                                       class="btn btn-primary pull-right">Create Team</a>
                 </div>
 
                 <div class="box-body table-responsive">
@@ -45,17 +45,17 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{Session::get('success')}}
                         </div>
-                    @endif
-                    <!-- failure message -->
-                    @if(Session::has('fails'))
-                        <div class="alert alert-danger alert-dismissable">
-                            <i class="fa fa-ban"></i>
-                            <b>Fail!</b>
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{Session::get('fails')}}
-                        </div>
-                    @endif
+                        @endif
+                                <!-- failure message -->
+                        @if(Session::has('fails'))
+                            <div class="alert alert-danger alert-dismissable">
+                                <i class="fa fa-ban"></i>
+                                <b>Fail!</b>
+                                <button type="button" class="close" data-dismiss="alert"
+                                        aria-hidden="true">&times;</button>
+                                {{Session::get('fails')}}
+                            </div>
+                        @endif
 
                         <h2>Teams</h2><a
                                 href="{{route('backend.teams.create')}}"
@@ -66,8 +66,7 @@
                                 <th>Name</th>
                                 <th>Status</th>
                                 <th>TeamLead</th>
-                            <th></th>
-                            <th></th>
+
                             </tr>
                             </thead>
                             <tfoot>
@@ -75,8 +74,7 @@
                                 <th>Name</th>
                                 <th>Status</th>
                                 <th>TeamLead</th>
-                            <th></th>
-                            <th></th>
+
                             </tr>
                             </tfoot>
                         </table>
@@ -84,7 +82,7 @@
             </div>
         </div>
     </div>
-
+@endsection
 
 @push('scripts')
 <script>
@@ -96,11 +94,9 @@
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
             ajax: '{!! route('api.teams.data') !!}',
             columns: [
-                    {data: 'teamnamelink', name: 'name'},
-                    {data: 'teamsstatuslink', name: 'status'},
-                    {data: 'teamleadlink', name: 'team_lead'},
-                {data: 'edit', name: 'edit', orderable: false, searchable: false},
-                {data: 'delete', name: 'delete', orderable: false, searchable: false},
+                {data: 'teamnamelink', name: 'name'},
+                {data: 'teamsstatuslink', name: 'status'},
+                {data: 'teamleadlink', name: 'team_lead'},
             ]
         });
     });
@@ -108,10 +104,7 @@
 @endpush
 
 
-
-
-
-<!-- Optional bottom section for modals etc... -->
+        <!-- Optional bottom section for modals etc... -->
 @section('body_bottom')
     <script language="JavaScript">
         function toggleCheckbox() {

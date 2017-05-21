@@ -55,7 +55,7 @@ $authors = Author::with(array('posts' => function($query)
         return Datatables::of($teams)
 
             ->addColumn('teamnamelink', function ($teams) {
-                return '<a href="backend/teams/' . $teams->id . '" ">' . $teams->name . '</a>';
+                return '<a href="/backend/teams/' . $teams->id . '" ">' . $teams->name . '</a>';
             })
             ->addColumn('teamsstatuslink', function ($teams) {
                 return $teams->status;

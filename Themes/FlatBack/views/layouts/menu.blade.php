@@ -11,7 +11,7 @@
     </a>
 </li>
 <li class="sub-menu">
-    <a href="{!! url('backend.teams.index') !!}" class="nav-link nav-toggle {!! Request::is('teams*') ? 'active' : '' !!}">
+    <a href="{!! route('backend.teams.index') !!}" class="nav-link nav-toggle {!! Request::is('teams*') ? 'active' : '' !!}">
         <i class="fa fa-edit"></i>
         <span class="title">Teams</span>
     </a>

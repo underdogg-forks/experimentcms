@@ -46,7 +46,7 @@
           <div class="col-md-2 col-sm-6">
             <div class="settingiconblue">
               <div class="settingdivblue">
-                <a href="{{url('/adminpanel/getsystem')}}"><span class="fa-stack fa-2x">
+                <a href="{{url('/backend/getsystem')}}"><span class="fa-stack fa-2x">
 
                  <i class="fa fa-laptop fa-stack-1x"></i>
                  </span></a>
@@ -102,7 +102,7 @@
           <div class="col-md-2 col-sm-6">
             <div class="settingiconblue">
               <div class="settingdivblue">
-                <a href="{{url('/adminpanel/getalert')}}"><span class="fa-stack fa-2x">
+                <a href="{{url('/backend/getalert')}}"><span class="fa-stack fa-2x">
                  <i class="fa fa-bell-o fa-stack-1x"></i>
                  </span></a>
               </div>
@@ -115,7 +115,7 @@
           <div class="col-md-2 col-sm-6">
             <div class="settingiconblue">
               <div class="settingdivblue">
-                <a href="{{url('/adminpanel/languages')}}"><span class="fa-stack fa-2x">
+                <a href="{{url('/backend/languages')}}"><span class="fa-stack fa-2x">
                  <i class="fa fa-language fa-stack-1x"></i>
                  </span></a>
               </div>
@@ -157,7 +157,7 @@
          <div class="col-md-2 col-sm-6">
            <div class="settingiconblue">
              <div class="settingdivblue">
-               <a href="{{ url('/adminpanel/staff/manage/') }}"><span class="fa-stack fa-2x">
+               <a href="{{ url('/backend/staff/manage/') }}"><span class="fa-stack fa-2x">
                  <i class="fa fa-user fa-stack-1x"></i>
                </span></a>
              </div>
@@ -169,7 +169,7 @@
          <div class="col-md-2 col-sm-6">
            <div class="settingiconblue">
              <div class="settingdivblue">
-               <a href="{{ url('/adminpanel/departments/manage') }}"><span class="fa-stack fa-2x">
+               <a href="{{ url('/backend/departments/manage') }}"><span class="fa-stack fa-2x">
                  <i class="fa fa-sitemap fa-stack-1x"></i>
                  </span></a>
              </div>
@@ -182,7 +182,7 @@
          <div class="col-md-2 col-sm-6">
            <div class="settingiconblue">
              <div class="settingdivblue">
-               <a href="{{ url('/adminpanel/teams/manage') }}"><span class="fa-stack fa-2x">
+               <a href="{{ url('/backend/teams/manage') }}"><span class="fa-stack fa-2x">
                  <i class="fa fa-users fa-stack-1x"></i>
                  </span></a>
              </div>
@@ -194,7 +194,7 @@
          <div class="col-md-2 col-sm-6">
            <div class="settingiconblue">
              <div class="settingdivblue">
-               <a href="{{ url('/adminpanel/roles/manage') }}"><span class="fa-stack fa-2x">
+               <a href="{{ url('/backend/roles/manage') }}"><span class="fa-stack fa-2x">
 
                  <i class="fa fa-group fa-stack-1x"></i>
                  </span></a>

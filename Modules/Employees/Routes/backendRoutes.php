@@ -1,5 +1,11 @@
 <?php
 
+Route::group(['prefix' => 'employeespanel'], function () {
+    Route::get(   '',      ['as' => 'employeespanel',          'uses' => 'EmployeesController@index']);
+
+}); // End of ADMIN group
+
+
 
 Route::group(['prefix' => 'staffpanel'], function () {
     Route::get('staffpanel', ['as' => 'staffpanel', 'uses' => 'StaffPanelController@index']);

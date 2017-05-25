@@ -73,7 +73,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-                <a href="{{url('/backend/companies/manage')}}"><span class="fa-stack fa-2x">
+                                    <a href="{{url('/backend/companies/manage')}}"><span class="fa-stack fa-2x">
 
                  <i class="fa fa-building-o fa-stack-1x"></i>
                </span></a>
@@ -86,7 +86,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-                <a href="{{url('/backend/system/manage')}}"><span class="fa-stack fa-2x">
+                                    <a href="{{url('/backend/system/manage')}}"><span class="fa-stack fa-2x">
 
                  <i class="fa fa-laptop fa-stack-1x"></i>
                  </span></a>
@@ -100,7 +100,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-                <a href="{{url('/backend/alerts/manage')}}"><span class="fa-stack fa-2x">
+                                    <a href="{{url('/backend/alerts/manage')}}"><span class="fa-stack fa-2x">
                  <i class="fa fa-bell-o fa-stack-1x"></i>
                  </span></a>
                                 </div>
@@ -112,7 +112,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-                <a href="{{url('/backend/job-scheduler/manage')}}"><span class="fa-stack fa-2x">
+                                    <a href="{{url('/backend/cronjobs/manage')}}"><span class="fa-stack fa-2x">
 
                  <i class="fa fa-hourglass-o fa-stack-1x"></i>
                  </span></a>
@@ -143,7 +143,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-               <a href="{{ url('/backend/staff/manage/') }}"><span class="fa-stack fa-2x">
+                                    <a href="{{ url('/backend/staff/manage/') }}"><span class="fa-stack fa-2x">
                  <i class="fa fa-user fa-stack-1x"></i>
                </span></a>
                                 </div>
@@ -168,7 +168,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-               <a href="{{ url('/backend/teams/manage') }}"><span class="fa-stack fa-2x">
+                                    <a href="{{ url('/backend/teams/manage') }}"><span class="fa-stack fa-2x">
                  <i class="fa fa-users fa-stack-1x"></i>
                  </span></a>
                                 </div>
@@ -180,7 +180,7 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-               <a href="{{ url('/backend/roles/manage') }}"><span class="fa-stack fa-2x">
+                                    <a href="{{ url('/backend/roles/manage') }}"><span class="fa-stack fa-2x">
 
                  <i class="fa fa-group fa-stack-1x"></i>
                  </span></a>
@@ -280,7 +280,8 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="settingiconblue">
                                 <div class="settingdivblue">
-               <a href="{{ url('/mailpanel/maildiagno/getmaildiagno') }}"><span class="fa-stack fa-2x">
+                                    <a href="{{ url('/mailpanel/maildiagno/getmaildiagno') }}"><span
+                                                class="fa-stack fa-2x">
 
                  <i class="fa fa-plus fa-stack-1x"></i>
                  </span></a>
@@ -384,11 +385,11 @@
             <!-- ./box-body -->
         </div>
 
-@endsection
-<!-- /content -->
+        @endsection
+                <!-- /content -->
 
 
 
-        @section('FooterInclude')
+@section('FooterInclude')
 
-        @stop
+@stop

@@ -14,31 +14,28 @@
     </div><!-- /.navbar-header -->
 
 
-
     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-
 
     <ul class="nav navbar-nav navbar-left">
         <li class="{{ on_route('homepage') ? 'active' : '' }}">
-            <a href="{{ route('homepage') }}">Home</a>
+            <a href="#">Home</a>
         </li>
-        <li class="{{ Request::is('about') ? 'active' : '' }}">
-            <a href="{{ route('page', ['about']) }}">About</a>
+        <li class="{{ Request::is('tickets') ? 'active' : '' }}">
+            <a href="#">Tickets</a>
         </li>
-        <li class="{{ Request::is('blog*') ? 'active' : '' }}">
-            <a href="#">Blog</a>
+        <li class="{{ Request::is('invoices') ? 'active' : '' }}">
+            <a href="#">Invoices</a>
         </li>
-        <li class="{{ Request::is('projects') ? 'active' : '' }}">
+        <li class="{{ Request::is('relations') ? 'active' : '' }}">
+            <a href="#">Relations</a>
+        </li>
+        <li class="{{ Request::is('projects*') ? 'active' : '' }}">
             <a href="#">Projects</a>
         </li>
-        <li class="{{ Request::is('books') ? 'active' : '' }}">
-            <a href="#">Book Library</a>
-        </li>
-        <li class="{{ Request::is('contact') ? 'active' : '' }}">
-            <a href="#">Contact</a>
+        <li class="{{ Request::is('trade') ? 'active' : '' }}">
+            <a href="#">Trade</a>
         </li>
     </ul>
-
 
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">

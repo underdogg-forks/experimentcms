@@ -18,11 +18,6 @@
                 <strong>consultant</strong>. I'm a <a href="http://www.laravel.com" target="_blank">Laravel</a>
                 framework <strong>specialist</strong>; an <strong>open-source contributor</strong> and always on the
                 lookout for new technologies and paradigm changes.</p>
-            <p>
-                <a class="btn btn-primary btn-lg" href="{{ route('page', ['about']) }}">Learn more about me</a>
-                <a class="btn btn-primary btn-lg" href="{{ route('page', ['projects']) }}">View my work</a>
-                <a class="btn btn-primary btn-lg" href="{{ route('page', ['contact']) }}">Hire Me!</a>
-            </p>
         </div>
     </div>
     <div class="row">

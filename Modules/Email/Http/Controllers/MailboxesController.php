@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Email\Http\Controllers\Admin;
+namespace Modules\Email\Http\Controllers;
 
 use App\Http\Requests;
 //use App\Http\Controllers\Controller;
@@ -61,23 +61,18 @@ class MailboxesController extends Controller
             ->addColumn('mailaddress', function ($mailboxes) {
                 return $mailboxes->email_address;
             })
-
             ->addColumn('mailboxtype', function ($mailboxes) {
                 return $mailboxes->mailbox_type;
             })
-
             ->addColumn('isactive', function ($mailboxes) {
                 return $mailboxes->is_active;
             })
-
             ->addColumn('fetching_status', function ($mailboxes) {
                 return $mailboxes->fetching_status;
             })
-
             ->addColumn('sending_status', function ($mailboxes) {
                 return $mailboxes->sending_status;
             })
-
             ->addColumn('department', function ($mailboxes) {
                 return $mailboxes->department_id;
             })
@@ -536,7 +531,6 @@ class MailboxesController extends Controller
         }
         return $return;
     }
-
 
 
     /**

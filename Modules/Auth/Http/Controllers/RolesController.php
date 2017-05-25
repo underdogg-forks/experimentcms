@@ -12,7 +12,7 @@ use Modules\Auth\Models\User;
 use Modules\Auth\Models\Role;
 use Illuminate\Routing\Controller;
 
-class RoleController extends Controller
+class RolesController extends Controller
 {
     /**
      * @var RoleRepository
@@ -26,16 +26,20 @@ class RoleController extends Controller
         $this->permissions = $permissions;
         $this->role = $role;
     }
-*/
 
 
     /**
-     * Display a listing of the resource.
+     * Display a listing.
      *
      * @return \Illuminate\Http\Response
+     * //Role $role, Department $department, Group_assign_department $group_assign_department
      */
     public function index(Request $request)
     {
+        /*$groups = $group->get();
+        $departments = $department->lists('id');*/
+
+
         $roles = Role::orderBy('id', 'DESC')->paginate(5);
         return view('auth::backend.roles.index', compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
@@ -113,12 +117,12 @@ class RoleController extends Controller
         $rolePermissions = DB::table("permission_role")->where("permission_role.role_id", $id)
             ->lists('permission_role.permission_id', 'permission_role.permission_id');
 
-/*
-        if (!$role = $this->role->find($id)) {
-            return redirect()->route('admin.user.role.index')
-                ->withError(trans('auth::messages.role not found'));
-        }
-*/
+        /*
+                if (!$role = $this->role->find($id)) {
+                    return redirect()->route('admin.user.role.index')
+                        ->withError(trans('auth::messages.role not found'));
+                }
+        */
 
 
         return view('auth::backend.roles.edit', compact('role', 'permission', 'rolePermissions'));

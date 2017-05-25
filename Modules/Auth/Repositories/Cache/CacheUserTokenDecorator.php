@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\User\Repositories\Cache;
+namespace Modules\Auth\Repositories\Cache;
 
 use Modules\Core\Repositories\Cache\BaseCacheDecorator;
-use Modules\User\Repositories\UserTokenRepository;
+use Modules\Auth\Repositories\UserTokenRepository;
 
 class CacheUserTokenDecorator extends BaseCacheDecorator implements UserTokenRepository
 {
@@ -37,7 +37,7 @@ class CacheUserTokenDecorator extends BaseCacheDecorator implements UserTokenRep
 
     /**
      * @param int $userId
-     * @return \Modules\User\Models\UserToken
+     * @return \Modules\Auth\Models\UserToken
      */
     public function generateFor($userId)
     {

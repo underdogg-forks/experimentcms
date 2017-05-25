@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailMailtypeTranslationsTable extends Migration
+class CreateEmailMailBoxTypeTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,15 @@ class CreateEmailMailtypeTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('email__mailtype_translations', function (Blueprint $table) {
+        Schema::create('email__mailboxtype_translations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             // Your translatable fields
 
-            $table->integer('mailtype_id')->unsigned();
+            $table->integer('mailboxtype_id')->unsigned();
             $table->string('locale')->index();
-            $table->unique(['mailtype_id', 'locale']);
-            $table->foreign('mailtype_id')->references('id')->on('email__mailtypes')->onDelete('cascade');
+            $table->unique(['mailboxtype_id', 'locale']);
+            $table->foreign('mailboxtype_id')->references('id')->on('email__mailboxtypes')->onDelete('cascade');
         });
     }
 
@@ -31,9 +31,9 @@ class CreateEmailMailtypeTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::table('email__mailtype_translations', function (Blueprint $table) {
-            $table->dropForeign(['mailtype_id']);
+        Schema::table('email__mailboxtype_translations', function (Blueprint $table) {
+            $table->dropForeign(['mailboxtype_id']);
         });
-        Schema::dropIfExists('email__mailtype_translations');
+        Schema::dropIfExists('email__mailboxtype_translations');
     }
 }

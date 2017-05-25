@@ -33,7 +33,7 @@ return [
     |--------------------------------------------------------------------------
     | Define a class that will handle User presentation
     |--------------------------------------------------------------------------
-    | Default: \Modules\User\Presenters\UserPresenter::class
+    | Default: \Modules\Auth\Presenters\UserPresenter::class
     */
     'presenter' => \Modules\Auth\Presenters\UserPresenter::class,
     /*

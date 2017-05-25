@@ -42,7 +42,7 @@ Route::group(['prefix' => '/user'], function (Router $router) {
 });
 
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'backend', 'namespace' => ''], function () {
+Route::group(['middleware' => ['auth'], 'prefix' => 'backend'], function () {
     Route::resource('users', 'UserController');
 
     /*Route::get('roles', ['as' => 'roles.index', 'uses' => 'RoleController@index', 'middleware' => ['permission:role-list|role-create|role-edit|role-delete']]);
@@ -52,11 +52,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'backend', 'namespace' => ''
     Route::get('roles/{id}/edit', ['as' => 'roles.edit', 'uses' => 'RoleController@edit', 'middleware' => ['permission:role-edit']]);
     Route::patch('roles/{id}', ['as' => 'roles.update', 'uses' => 'RoleController@update', 'middleware' => ['permission:role-edit']]);
     Route::delete('roles/{id}', ['as' => 'roles.destroy', 'uses' => 'RoleController@destroy', 'middleware' => ['permission:role-delete']]);*/
-    Route::resource('roles', 'RolesController');
+    //Route::resource('roles', '\Modules\Core\Http\Controllers\RolesController');
 
-    Route::get('roles', [
+    Route::get('roles/manage', [
         'as' => 'backend.roles.index',
-        'uses' => '\Modules\Auth\Http\ControllersRolesController@index',
+        'uses' => '\Modules\Core\Http\Controllers\RolesController@index',
         //'middleware' => ['permission:role-list|role-create|role-edit|role-delete'],'can:user.roles.index',
     ]);
     Route::get('roles/create', [
@@ -98,7 +98,7 @@ Route::group(['prefix' => '/account'], function (Router $router) {
         'uses' => 'Account\ProfileController@update',
     ]);
     Route::bind('userTokenId', function ($id) {
-        return app(\Modules\User\Repositories\UserTokenRepository::class)->find($id);
+        return app(\Modules\Auth\Repositories\UserTokenRepository::class)->find($id);
     });
     Route::get('api-keys', [
         'as' => 'admin.account.api.index',

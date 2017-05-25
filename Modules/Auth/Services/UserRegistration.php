@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\User\Services;
+namespace Modules\Auth\Services;
 
 //use Modules\Auth\Contracts\Authentication;
-use Modules\User\Events\UserHasRegistered;
-use Modules\User\Repositories\RoleRepository;
+use Modules\Auth\Events\UserHasRegistered;
+use Modules\Auth\Repositories\RoleRepository;
 
 class UserRegistration
 {

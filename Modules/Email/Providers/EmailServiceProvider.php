@@ -55,15 +55,15 @@ class EmailServiceProvider extends ServiceProvider
             }
         );
         $this->app->bind(
-            'Modules\Email\Repositories\MailtypeRepository',
+            'Modules\Email\Repositories\MailBoxTypeRepository',
             function () {
-                $repository = new \Modules\Email\Repositories\Eloquent\EloquentMailtypeRepository(new \Modules\Email\Entities\Mailtype());
+                $repository = new \Modules\Email\Repositories\Eloquent\EloquentMailBoxTypeRepository(new \Modules\Email\Entities\MailBoxType());
 
                 if (! config('app.cache')) {
                     return $repository;
                 }
 
-                return new \Modules\Email\Repositories\Cache\CacheMailtypeDecorator($repository);
+                return new \Modules\Email\Repositories\Cache\CacheMailBoxTypeDecorator($repository);
             }
         );
 // add bindings

@@ -3,7 +3,7 @@
 namespace Modules\Auth\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Modules\User\Contracts\Authentication;
+use Modules\Auth\Contracts\Authentication;
 
 class UpdateProfileRequest extends FormRequest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Repositories\Sentinel;
+namespace Modules\Auth\Repositories\Sentinel;
 
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
@@ -8,7 +8,7 @@ use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Reminder;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 //use Modules\Auth\Contracts\Authentication;
-use Modules\User\Events\UserHasActivatedAccount;
+use Modules\Auth\Events\UserHasActivatedAccount;
 
 class SentinelAuthentication implements Authentication
 {
@@ -47,8 +47,8 @@ class SentinelAuthentication implements Authentication
 
     /**
      * Assign a role to the given user.
-     * @param  \Modules\User\Repositories\UserRepository $user
-     * @param  \Modules\User\Repositories\RoleRepository $role
+     * @param  \Modules\Auth\Repositories\UserRepository $user
+     * @param  \Modules\Auth\Repositories\RoleRepository $role
      * @return mixed
      */
     public function assignRole($user, $role)
@@ -85,7 +85,7 @@ class SentinelAuthentication implements Authentication
 
     /**
      * Create an activation code for the given user
-     * @param  \Modules\User\Repositories\UserRepository $user
+     * @param  \Modules\Auth\Repositories\UserRepository $user
      * @return mixed
      */
     public function createActivation($user)
@@ -95,7 +95,7 @@ class SentinelAuthentication implements Authentication
 
     /**
      * Create a reminders code for the given user
-     * @param  \Modules\User\Repositories\UserRepository $user
+     * @param  \Modules\Auth\Repositories\UserRepository $user
      * @return mixed
      */
     public function createReminderCode($user)
@@ -148,7 +148,7 @@ class SentinelAuthentication implements Authentication
 
     /**
      * Get the currently logged in user
-     * @return \Modules\User\Models\UserInterface
+     * @return \Modules\Auth\Models\UserInterface
      */
     public function user()
     {

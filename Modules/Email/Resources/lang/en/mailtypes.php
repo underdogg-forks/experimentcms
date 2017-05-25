@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'list resource' => 'List mailtypes',
-    'create resource' => 'Create mailtypes',
-    'edit resource' => 'Edit mailtypes',
-    'destroy resource' => 'Destroy mailtypes',
+    'list resource' => 'List mailboxtypes',
+    'create resource' => 'Create mailboxtypes',
+    'edit resource' => 'Edit mailboxtypes',
+    'destroy resource' => 'Destroy mailboxtypes',
     'title' => [
-        'mailtypes' => 'Mailtype',
-        'create mailtype' => 'Create a mailtype',
-        'edit mailtype' => 'Edit a mailtype',
+        'mailboxtypes' => 'MailBoxType',
+        'create mailboxtype' => 'Create a mailboxtype',
+        'edit mailboxtype' => 'Edit a mailboxtype',
     ],
     'button' => [
-        'create mailtype' => 'Create a mailtype',
+        'create mailboxtype' => 'Create a mailboxtype',
     ],
     'table' => [
     ],

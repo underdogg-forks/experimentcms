@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Repositories;
+namespace Modules\Auth\Repositories;
 
 use Modules\Core\Repositories\BaseRepository;
 
@@ -15,7 +15,7 @@ interface UserTokenRepository extends BaseRepository
 
     /**
      * @param int $userId
-     * @return \Modules\User\Models\UserToken
+     * @return \Modules\Auth\Models\UserToken
      */
     public function generateFor($userId);
 }

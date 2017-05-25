@@ -72,10 +72,10 @@ class SentryInstaller extends ProviderInstaller implements SetupScript
     public function seed()
     {
         if ($this->command->option('verbose')) {
-            return $this->command->call('db:seed', ['--class' => 'Modules\User\Database\Seeders\SentryGroupSeedTableSeeder']);
+            return $this->command->call('db:seed', ['--class' => 'Modules\Auth\Database\Seeders\SentryGroupSeedTableSeeder']);
         }
 
-        return $this->command->callSilent('db:seed', ['--class' => 'Modules\User\Database\Seeders\SentryGroupSeedTableSeeder']);
+        return $this->command->callSilent('db:seed', ['--class' => 'Modules\Auth\Database\Seeders\SentryGroupSeedTableSeeder']);
     }
 
     /**

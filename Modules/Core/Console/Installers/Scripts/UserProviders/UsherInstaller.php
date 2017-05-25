@@ -93,10 +93,10 @@ class UsherInstaller extends ProviderInstaller implements SetupScript
     public function seed()
     {
         if ($this->command->option('verbose')) {
-            return $this->command->call('db:seed', ['--class' => 'Modules\User\Database\Seeders\UsherTableSeeder']);
+            return $this->command->call('db:seed', ['--class' => 'Modules\Auth\Database\Seeders\UsherTableSeeder']);
         }
 
-        return $this->command->callSilent('db:seed', ['--class' => 'Modules\User\Database\Seeders\UsherTableSeeder']);
+        return $this->command->callSilent('db:seed', ['--class' => 'Modules\Auth\Database\Seeders\UsherTableSeeder']);
     }
 
     /**

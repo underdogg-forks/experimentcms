@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\User\Emails;
+namespace Modules\Auth\Emails;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Modules\User\Models\UserInterface;
+use Modules\Auth\Models\UserInterface;
 
 class ResetPasswordEmail extends Mailable implements ShouldQueue
 {

@@ -7,11 +7,11 @@ return [
         'edit' => 'email::mailboxes.edit resource',
         'destroy' => 'email::mailboxes.destroy resource',
     ],
-    'email.mailtypes' => [
-        'index' => 'email::mailtypes.list resource',
-        'create' => 'email::mailtypes.create resource',
-        'edit' => 'email::mailtypes.edit resource',
-        'destroy' => 'email::mailtypes.destroy resource',
+    'email.mailboxtypes' => [
+        'index' => 'email::mailboxtypes.list resource',
+        'create' => 'email::mailboxtypes.create resource',
+        'edit' => 'email::mailboxtypes.edit resource',
+        'destroy' => 'email::mailboxtypes.destroy resource',
     ],
 // append
 

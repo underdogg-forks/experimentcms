@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\User\Repositories\Eloquent;
+namespace Modules\Auth\Repositories\Eloquent;
 
 use Illuminate\Database\QueryException;
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
-use Modules\User\Repositories\UserTokenRepository;
+use Modules\Auth\Repositories\UserTokenRepository;
 use Ramsey\Uuid\Uuid;
 
 class EloquentUserTokenRepository extends EloquentBaseRepository implements UserTokenRepository
@@ -21,7 +21,7 @@ class EloquentUserTokenRepository extends EloquentBaseRepository implements User
 
     /**
      * @param int $userId
-     * @return \Modules\User\Models\UserToken
+     * @return \Modules\Auth\Models\UserToken
      */
     public function generateFor($userId)
     {

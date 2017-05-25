@@ -12,6 +12,6 @@ class Permission extends EntrustPermission
 
     public function hasperm()
     {
-        return $this->belongsToMany(PermissionRole::class, 'Permission_role', 'role_id');
+        return $this->belongsToMany(PermissionRole::class, 'permission_role', 'role_id');
     }
 }

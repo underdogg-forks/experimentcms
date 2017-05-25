@@ -2,11 +2,11 @@
 
 namespace Modules\Auth\Http\Middleware;
 
-//use Modules\User\Contracts\Authentication;
+//use Modules\Auth\Contracts\Authentication;
 
 /**
  * Class LoggedInMiddleware
- * @package Modules\User\Http\Middleware
+ * @package Modules\Auth\Http\Middleware
  * Middleware to make sure affected routes need a logged in user
  */
 class LoggedInMiddleware

@@ -1,22 +1,22 @@
 <?php
 
-namespace Modules\User\Repositories\Sentinel;
+namespace Modules\Auth\Repositories\Sentinel;
 
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\Hash;
-use Modules\User\Models\Sentinel\User;
-use Modules\User\Events\UserHasRegistered;
-use Modules\User\Events\UserIsUpdating;
-use Modules\User\Events\UserWasCreated;
-use Modules\User\Events\UserWasUpdated;
-use Modules\User\Exceptions\UserNotFoundException;
-use Modules\User\Repositories\UserRepository;
+use Modules\Auth\Models\Sentinel\User;
+use Modules\Auth\Events\UserHasRegistered;
+use Modules\Auth\Events\UserIsUpdating;
+use Modules\Auth\Events\UserWasCreated;
+use Modules\Auth\Events\UserWasUpdated;
+use Modules\Auth\Exceptions\UserNotFoundException;
+use Modules\Auth\Repositories\UserRepository;
 
 class SentinelUserRepository implements UserRepository
 {
     /**
-     * @var \Modules\User\Models\Sentinel\User
+     * @var \Modules\Auth\Models\Sentinel\User
      */
     protected $user;
     /**

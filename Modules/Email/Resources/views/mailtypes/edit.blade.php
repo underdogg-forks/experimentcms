@@ -2,12 +2,12 @@
 
 @section('content-header')
     <h1>
-        {{ trans('email::mailtypes.title.edit mailtype') }}
+        {{ trans('email::mailboxtypes.title.edit mailboxtype') }}
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li><a href="{{ route('admin.email.mailtype.index') }}">{{ trans('email::mailtypes.title.mailtypes') }}</a></li>
-        <li class="active">{{ trans('email::mailtypes.title.edit mailtype') }}</li>
+        <li><a href="{{ route('admin.email.mailboxtype.index') }}">{{ trans('email::mailboxtypes.title.mailboxtypes') }}</a></li>
+        <li class="active">{{ trans('email::mailboxtypes.title.edit mailboxtype') }}</li>
     </ol>
 @stop
 
@@ -16,7 +16,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.email.mailtype.update', $mailtype->id], 'method' => 'put']) !!}
+    {!! Form::open(['route' => ['admin.email.mailboxtype.update', $mailboxtype->id], 'method' => 'put']) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="nav-tabs-custom">
@@ -26,13 +26,13 @@
                     @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
                         <?php $i++; ?>
                         <div class="tab-pane {{ locale() == $locale ? 'active' : '' }}" id="tab_{{ $i }}">
-                            @include('email::admin.mailtypes.partials.edit-fields', ['lang' => $locale])
+                            @include('email::admin.mailboxtypes.partials.edit-fields', ['lang' => $locale])
                         </div>
                     @endforeach
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.update') }}</button>
-                        <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.email.mailtype.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
+                        <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.email.mailboxtype.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
                     </div>
                 </div>
             </div> {{-- end nav-tabs-custom --}}
@@ -56,7 +56,7 @@
         $( document ).ready(function() {
             $(document).keypressAction({
                 actions: [
-                    { key: 'b', route: "<?= route('admin.email.mailtype.index') ?>" }
+                    { key: 'b', route: "<?= route('admin.email.mailboxtype.index') ?>" }
                 ]
             });
         });

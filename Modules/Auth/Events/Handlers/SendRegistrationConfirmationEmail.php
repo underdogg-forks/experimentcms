@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\User\Events\Handlers;
+namespace Modules\Auth\Events\Handlers;
 
 use Illuminate\Contracts\Mail\Mailer;
 //use Modules\Auth\Contracts\Authentication;
-use Modules\User\Events\UserHasRegistered;
-use Modules\User\Emails\WelcomeEmail;
+use Modules\Auth\Events\UserHasRegistered;
+use Modules\Auth\Emails\WelcomeEmail;
 
 class SendRegistrationConfirmationEmail
 {

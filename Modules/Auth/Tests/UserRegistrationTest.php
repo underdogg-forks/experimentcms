@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\User\Tests;
+namespace Modules\Auth\Tests;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Modules\User\Repositories\RoleRepository;
-use Modules\User\Repositories\UserRepository;
-use Modules\User\Services\UserRegistration;
+use Modules\Auth\Repositories\RoleRepository;
+use Modules\Auth\Repositories\UserRepository;
+use Modules\Auth\Services\UserRegistration;
 
 class UserRegistrationTest extends BaseUserTestCase
 {

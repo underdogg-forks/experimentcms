@@ -2,15 +2,15 @@
 
 namespace Modules\Email\Repositories\Cache;
 
-use Modules\Email\Repositories\MailtypeRepository;
+use Modules\Email\Repositories\MailBoxTypeRepository;
 use Modules\Core\Repositories\Cache\BaseCacheDecorator;
 
-class CacheMailtypeDecorator extends BaseCacheDecorator implements MailtypeRepository
+class CacheMailBoxTypeDecorator extends BaseCacheDecorator implements MailBoxTypeRepository
 {
-    public function __construct(MailtypeRepository $mailtype)
+    public function __construct(MailBoxTypeRepository $mailboxtype)
     {
         parent::__construct();
-        $this->entityName = 'email.mailtypes';
-        $this->repository = $mailtype;
+        $this->entityName = 'email.mailboxtypes';
+        $this->repository = $mailboxtype;
     }
 }

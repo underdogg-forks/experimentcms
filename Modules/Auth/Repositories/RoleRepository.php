@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\User\Repositories;
+namespace Modules\Auth\Repositories;
 
 /**
  * Interface RoleRepository
- * @package Modules\User\Repositories
+ * @package Modules\Auth\Repositories
  */
 interface RoleRepository
 {

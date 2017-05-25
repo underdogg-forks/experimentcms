@@ -1,109 +1,106 @@
-@extends('layouts.master')
-
-@section('content-header')
-    <h1>
-        {{ trans('email::mailboxes.title.mailboxes') }}
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li class="active">{{ trans('email::mailboxes.title.mailboxes') }}</li>
-    </ol>
-@stop
+@extends('layouts.gentel')
 
 @section('content')
     <div class="row">
-        <div class="col-xs-12">
-            <div class="row">
-                <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
-                    <a href="{{ route('admin.email.mailbox.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
-                        <i class="fa fa-pencil"></i> {{ trans('email::mailboxes.button.create mailbox') }}
-                    </a>
-                </div>
-            </div>
-            <div class="box box-primary">
-                <div class="box-header">
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="table-responsive">
-                        <table class="data-table table table-bordered table-hover">
+        <div class="col-lg-12 mailboxes">
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="box-header">
+                        <h2 class="box-title">{!! Lang::get('lang.emails') !!}</h2><a
+                                href="{{route('backend.mailboxes.create')}}" class="btn btn-primary pull-right"><span
+                                    class="glyphicon glyphicon-plus"></span> &nbsp;{{Lang::get('lang.create_email')}}
+                        </a></div>
+                    <div style="clear:both"></div>
+                    Mailboxes
+                    <a class="btn btn-primary pull-right" href="{!! route('backend.mailboxes.create') !!}">Add New</a>
+                    <br><br>
+                </header>
+                <div class="panel-body">
+
+
+                    <!-- check whether success or not -->
+
+                    @if(Session::has('success'))
+                        <div class="alert alert-success alert-dismissable">
+                            <i class="fa  fa-check-circle"></i>
+                            <b>Success!</b>
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            {{Session::get('success')}}
+                        </div>
+                        @endif
+                                <!-- failure message -->
+                        @if(Session::has('fails'))
+                            <div class="alert alert-danger alert-dismissable">
+                                <i class="fa fa-ban"></i>
+                                <b>Fail!</b>
+                                <button type="button" class="close" data-dismiss="alert"
+                                        aria-hidden="true">&times;</button>
+                                {{Session::get('fails')}}
+                            </div>
+                        @endif
+
+                        <?php
+                        /*
+                            $default_system_email = App\Model\helpdesk\Settings\Email::where('id', '=', '1')->first();
+                            if($default_system_email->sys_email) {
+                                $default_email = $default_system_email->sys_email;
+                            } else {
+                                $default_email = null;
+                            }
+                        */
+                        ?>
+
+                        <table class="table table-hover table-bordered table-striped" id="mailboxes-table">
                             <thead>
                             <tr>
-                                <th>{{ trans('core::core.table.created at') }}</th>
-                                <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
+                                <th>Name</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <?php if (isset($mailboxes)): ?>
-                            <?php foreach ($mailboxes as $mailbox): ?>
-                            <tr>
-                                <td>
-                                    <a href="{{ route('admin.email.mailbox.edit', [$mailbox->id]) }}">
-                                        {{ $mailbox->created_at }}
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a href="{{ route('admin.email.mailbox.edit', [$mailbox->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
-                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.email.mailbox.destroy', [$mailbox->id]) }}"><i class="fa fa-trash"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                            <?php endif; ?>
-                            </tbody>
+
                             <tfoot>
                             <tr>
-                                <th>{{ trans('core::core.table.created at') }}</th>
-                                <th>{{ trans('core::core.table.actions') }}</th>
+                                <th>Name</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             </tfoot>
                         </table>
-                        <!-- /.box-body -->
-                    </div>
                 </div>
-                <!-- /.box -->
-            </div>
+            </section>
         </div>
     </div>
-    @include('core::partials.delete-modal')
-@stop
+@endsection
 
-@section('footer')
-    <a data-toggle="modal" data-target="#keyboardShortcutsModal"><i class="fa fa-keyboard-o"></i></a> &nbsp;
-@stop
-@section('shortcuts')
-    <dl class="dl-horizontal">
-        <dt><code>c</code></dt>
-        <dd>{{ trans('email::mailboxes.title.create mailbox') }}</dd>
-    </dl>
-@stop
+@push('scripts')
+<script>
+    $(function () {
+        $('#mailboxes-table').DataTable({
+            processing: true,
+            serverSide: true,
+            "pageLength": 50,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            ajax: '{!! route('api.mailboxes.data') !!}',
+            columns: [
+                {data: 'mailboxesnamelink', name: 'name'},
+                {data: 'edit', name: 'edit', orderable: false, searchable: false},
+                {data: 'delete', name: 'delete', orderable: false, searchable: false},
+            ]
+        });
+    });
+</script>
+@endpush
 
-@section('scripts')
-    <script type="text/javascript">
-        $( document ).ready(function() {
-            $(document).keypressAction({
-                actions: [
-                    { key: 'c', route: "<?= route('admin.email.mailbox.create') ?>" }
-                ]
-            });
-        });
+
+        <!-- Optional bottom section for modals etc... -->
+@section('body_bottom')
+    <script language="JavaScript">
+        function toggleCheckbox() {
+            checkboxes = document.getElementsByName('chkDepartments[]');
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                checkboxes[i].checked = !checkboxes[i].checked;
+            }
+        }
     </script>
-    <?php $locale = locale(); ?>
-    <script type="text/javascript">
-        $(function () {
-            $('.data-table').dataTable({
-                "paginate": true,
-                "lengthChange": true,
-                "filter": true,
-                "sort": true,
-                "info": true,
-                "autoWidth": true,
-                "order": [[ 0, "desc" ]],
-                "language": {
-                    "url": '<?php echo Module::asset("core:js/vendor/datatables/{$locale}.json") ?>'
-                }
-            });
-        });
-    </script>
-@stop
+@endsection

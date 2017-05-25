@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\User\Tests;
+namespace Modules\Auth\Tests;
 
 use Illuminate\View\ViewServiceProvider;
 use Modules\Core\Providers\CoreServiceProvider;
-use Modules\User\Providers\UserServiceProvider;
+use Modules\Auth\Providers\UserServiceProvider;
 use Nwidart\Modules\LaravelModulesServiceProvider;
 use Orchestra\Testbench\TestCase;
 

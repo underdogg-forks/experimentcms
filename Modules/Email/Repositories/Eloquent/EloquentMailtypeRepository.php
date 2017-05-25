@@ -2,9 +2,9 @@
 
 namespace Modules\Email\Repositories\Eloquent;
 
-use Modules\Email\Repositories\MailtypeRepository;
+use Modules\Email\Repositories\MailBoxTypeRepository;
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 
-class EloquentMailtypeRepository extends EloquentBaseRepository implements MailtypeRepository
+class EloquentMailBoxTypeRepository extends EloquentBaseRepository implements MailBoxTypeRepository
 {
 }

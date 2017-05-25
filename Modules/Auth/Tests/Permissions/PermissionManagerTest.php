@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\User\Tests\Permissions;
+namespace Modules\Auth\Tests\Permissions;
 
 use Modules\Core\Tests\BaseTestCase;
-use Modules\User\Permissions\PermissionManager;
+use Modules\Auth\Permissions\PermissionManager;
 
 class PermissionManagerTest extends BaseTestCase
 {

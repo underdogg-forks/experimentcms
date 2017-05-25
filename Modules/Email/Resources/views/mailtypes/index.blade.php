@@ -2,11 +2,11 @@
 
 @section('content-header')
     <h1>
-        {{ trans('email::mailtypes.title.mailtypes') }}
+        {{ trans('email::mailboxtypes.title.mailboxtypes') }}
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li class="active">{{ trans('email::mailtypes.title.mailtypes') }}</li>
+        <li class="active">{{ trans('email::mailboxtypes.title.mailboxtypes') }}</li>
     </ol>
 @stop
 
@@ -15,8 +15,8 @@
         <div class="col-xs-12">
             <div class="row">
                 <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
-                    <a href="{{ route('admin.email.mailtype.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
-                        <i class="fa fa-pencil"></i> {{ trans('email::mailtypes.button.create mailtype') }}
+                    <a href="{{ route('admin.email.mailboxtype.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
+                        <i class="fa fa-pencil"></i> {{ trans('email::mailboxtypes.button.create mailboxtype') }}
                     </a>
                 </div>
             </div>
@@ -34,18 +34,18 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php if (isset($mailtypes)): ?>
-                            <?php foreach ($mailtypes as $mailtype): ?>
+                            <?php if (isset($mailboxtypes)): ?>
+                            <?php foreach ($mailboxtypes as $mailboxtype): ?>
                             <tr>
                                 <td>
-                                    <a href="{{ route('admin.email.mailtype.edit', [$mailtype->id]) }}">
-                                        {{ $mailtype->created_at }}
+                                    <a href="{{ route('admin.email.mailboxtype.edit', [$mailboxtype->id]) }}">
+                                        {{ $mailboxtype->created_at }}
                                     </a>
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.email.mailtype.edit', [$mailtype->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
-                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.email.mailtype.destroy', [$mailtype->id]) }}"><i class="fa fa-trash"></i></button>
+                                        <a href="{{ route('admin.email.mailboxtype.edit', [$mailboxtype->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
+                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.email.mailboxtype.destroy', [$mailboxtype->id]) }}"><i class="fa fa-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -75,7 +75,7 @@
 @section('shortcuts')
     <dl class="dl-horizontal">
         <dt><code>c</code></dt>
-        <dd>{{ trans('email::mailtypes.title.create mailtype') }}</dd>
+        <dd>{{ trans('email::mailboxtypes.title.create mailboxtype') }}</dd>
     </dl>
 @stop
 
@@ -84,7 +84,7 @@
         $( document ).ready(function() {
             $(document).keypressAction({
                 actions: [
-                    { key: 'c', route: "<?= route('admin.email.mailtype.create') ?>" }
+                    { key: 'c', route: "<?= route('admin.email.mailboxtype.create') ?>" }
                 ]
             });
         });

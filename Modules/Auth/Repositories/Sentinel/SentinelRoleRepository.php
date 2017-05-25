@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\User\Repositories\Sentinel;
+namespace Modules\Auth\Repositories\Sentinel;
 
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
-use Modules\User\Events\RoleWasUpdated;
-use Modules\User\Repositories\RoleRepository;
+use Modules\Auth\Events\RoleWasUpdated;
+use Modules\Auth\Repositories\RoleRepository;
 
 class SentinelRoleRepository implements RoleRepository
 {

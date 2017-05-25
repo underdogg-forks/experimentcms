@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\User\Services;
+namespace Modules\Auth\Services;
 
 //use Modules\Auth\Contracts\Authentication;
-use Modules\User\Events\UserHasBegunResetProcess;
-use Modules\User\Exceptions\InvalidOrExpiredResetCode;
-use Modules\User\Exceptions\UserNotFoundException;
-use Modules\User\Repositories\UserRepository;
+use Modules\Auth\Events\UserHasBegunResetProcess;
+use Modules\Auth\Exceptions\InvalidOrExpiredResetCode;
+use Modules\Auth\Exceptions\UserNotFoundException;
+use Modules\Auth\Repositories\UserRepository;
 
 class UserResetter
 {

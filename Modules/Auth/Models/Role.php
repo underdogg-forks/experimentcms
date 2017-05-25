@@ -18,6 +18,11 @@ class Role extends EntrustRole
         'description',
     ];
 
+    public function staffRole()
+    {
+        return $this->hasMany(Role::class, 'staff_id', 'id');
+    }
+
     public function userRole()
     {
         return $this->hasMany(Role::class, 'user_id', 'id');
@@ -25,6 +30,6 @@ class Role extends EntrustRole
 
     public function permissions()
     {
-        return $this->belongsToMany(permissions::class, 'permission_role', 'role_id', 'permissions_id');
+        return $this->belongsToMany(Permission::class, 'permission_role', 'role_id', 'permissions_id');
     }
 }

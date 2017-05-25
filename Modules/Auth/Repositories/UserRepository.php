@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\User\Repositories;
+namespace Modules\Auth\Repositories;
 
-use Modules\User\Models\UserInterface;
+use Modules\Auth\Models\UserInterface;
 
 /**
  * Interface UserRepository
- * @package Modules\User\Repositories
+ * @package Modules\Auth\Repositories
  */
 interface UserRepository
 {

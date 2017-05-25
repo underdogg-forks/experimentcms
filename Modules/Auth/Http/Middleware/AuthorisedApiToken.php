@@ -4,7 +4,7 @@ namespace Modules\Auth\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\User\Repositories\UserTokenRepository;
+use Modules\Auth\Repositories\UserTokenRepository;
 
 class AuthorisedApiToken
 {

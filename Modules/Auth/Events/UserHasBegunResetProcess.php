@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Events;
+namespace Modules\Auth\Events;
 
 class UserHasBegunResetProcess
 {

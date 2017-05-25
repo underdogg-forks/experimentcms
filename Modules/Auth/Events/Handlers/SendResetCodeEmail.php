@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\User\Events\Handlers;
+namespace Modules\Auth\Events\Handlers;
 
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
-use Modules\User\Emails\ResetPasswordEmail;
-use Modules\User\Events\UserHasBegunResetProcess;
+use Modules\Auth\Emails\ResetPasswordEmail;
+use Modules\Auth\Events\UserHasBegunResetProcess;
 
 class SendResetCodeEmail
 {

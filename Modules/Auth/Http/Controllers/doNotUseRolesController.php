@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Auth\Http\Controllers;
+namespace Modules\Auth\doNotUse\Controllers;
 
 
-use Modules\User\Http\Requests\RolesRequest;
-use Modules\User\Permissions\PermissionManager;
-use Modules\User\Repositories\RoleRepository;
+use Modules\Auth\Http\Requests\RolesRequest;
+use Modules\Auth\Permissions\PermissionManager;
+use Modules\Auth\Repositories\RoleRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\Auth\Models\User;
@@ -157,7 +157,7 @@ class RolesController extends Controller
             $role->attachPermission($value);
         }
 
-        return redirect()->route('auth::backend.roles.index')
+        return redirect()->route('roles.index')
             ->with('success', trans('auth::messages.role updated'));
     }
 

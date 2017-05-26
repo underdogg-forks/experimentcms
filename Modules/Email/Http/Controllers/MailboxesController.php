@@ -44,7 +44,7 @@ class MailboxesController extends Controller
 
     public function maildashboard()
     {
-        return view('email::mail.maildashboard');
+        return view('email::maildashboard');
     }
 
     public function anyData()

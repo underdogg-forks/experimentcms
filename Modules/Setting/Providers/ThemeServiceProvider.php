@@ -43,8 +43,33 @@ class ThemeServiceProvider extends ServiceProvider
     private function inAdministration()
     {
         $segment = config('laravellocalization.hideDefaultLocaleInURL', false) ? 1 : 2;
+        $testing = $this->app['request']->segment($segment);
+        switch ($testing) {
+            case $this->app['config']->get('asgard.core.core.admin-prefix'):
+                $returnvalue = true;
+                break;
+            case "adminpanel":
+                $returnvalue = true;
+                break;
+            case "mailpanel":
+                $returnvalue = true;
+                break;
+            case "ticketspanel":
+                $returnvalue = true;
+                break;
+            case "relationspanel":
+                $returnvalue = true;
+                break;
+            case "ticketspanel":
+                $returnvalue = true;
+                break;
+            default:
+                $returnvalue = false;
+        }
 
-        return $this->app['request']->segment($segment) === $this->app['config']->get('asgard.core.core.admin-prefix');
+        //$this->app['request']->segment($segment) === $this->app['config']->get('asgard.core.core.admin-prefix')
+
+        return $returnvalue;
     }
 
     /**

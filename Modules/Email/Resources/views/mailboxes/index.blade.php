@@ -6,7 +6,7 @@
             <section class="panel">
                 <header class="panel-heading">
                     <div class="box-header">
-                        <h2 class="box-title">{!! Lang::get('lang.emails') !!}</h2><a
+                        <h2 class="box-title">{!! Lang::get('email::lang.mailboxes') !!}</h2><a
                                 href="{{route('backend.mailboxes.create')}}" class="btn btn-primary pull-right"><span
                                     class="glyphicon glyphicon-plus"></span> &nbsp;{{Lang::get('lang.create_email')}}
                         </a></div>

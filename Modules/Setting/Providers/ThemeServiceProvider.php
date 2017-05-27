@@ -44,6 +44,7 @@ class ThemeServiceProvider extends ServiceProvider
     {
         $segment = config('laravellocalization.hideDefaultLocaleInURL', false) ? 1 : 2;
         $testing = $this->app['request']->segment($segment);
+
         switch ($testing) {
             case $this->app['config']->get('asgard.core.core.admin-prefix'):
                 $returnvalue = true;
@@ -52,7 +53,7 @@ class ThemeServiceProvider extends ServiceProvider
                 $returnvalue = true;
                 break;
             case "mailpanel":
-                $returnvalue = true;
+                return true;
                 break;
             case "ticketspanel":
                 $returnvalue = true;
@@ -66,6 +67,8 @@ class ThemeServiceProvider extends ServiceProvider
             default:
                 $returnvalue = false;
         }
+
+        $returnvalue = true;
 
         //$this->app['request']->segment($segment) === $this->app['config']->get('asgard.core.core.admin-prefix')
 

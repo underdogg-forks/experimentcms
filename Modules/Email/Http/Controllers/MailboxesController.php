@@ -50,7 +50,7 @@ class MailboxesController extends Controller
     public function anyData()
     {
         $mailboxes = Mailbox::select([
-            'id', 'email_address', 'email_name', 'is_active', 'fetching_status', 'sending_status', 'mailbox_type',
+            'id', 'email_address', 'email_name', 'is_active', 'fetching_status', 'sending_status', 'mailbox_protocol',
             'department_id', 'priority_id', 'updated_at'
         ]);
 

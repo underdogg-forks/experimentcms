@@ -21,6 +21,8 @@ class CreateEmailMailboxesTable extends Migration
             $table->string('user_name');
             $table->string('password');
 
+            $table->boolean('is_active');
+
             $table->boolean('fetching_status');
             $table->string('fetching_host');
             $table->string('fetching_port');

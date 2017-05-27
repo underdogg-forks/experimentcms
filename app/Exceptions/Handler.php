@@ -39,6 +39,20 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
+/*
+        $debug = \Config::get('app.bugsnag_reporting');
+        $debug = ($debug) ? 'true' : 'false';
+        if ($debug == 'false') {
+            Bugsnag::setBeforeNotifyFunction(function ($error) {
+                return false;
+            });
+        } else {
+            $version = \Config::get('app.version');
+            Bugsnag::setAppVersion($version);
+        }
+*/
+
+
         parent::report($e);
     }
 
@@ -61,8 +75,121 @@ class Handler extends ExceptionHandler
                 ->withErrors(trans('core::core.error token mismatch'));
         }
 
+        switch ($e) {
+            case $e instanceof \Illuminate\Http\Exception\HttpResponseException:
+                return parent::render($request, $e);
+            case $e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException:
+                return response()->json(['message' => $e->getMessage(), 'code' => $e->getStatusCode()]);
+            case $e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException:
+                return response()->json(['message' => $e->getMessage(), 'code' => $e->getStatusCode()]);
+            default:
+                return $this->common($request, $e);
+        }
         return parent::render($request, $e);
     }
+
+    /**
+     * Function to render 500 error page.
+     *
+     * @param type $request
+     * @param type $e
+     *
+     * @return type mixed
+     */
+    public function render500($request, $e)
+    {
+        if (config('app.debug') == true) {
+            return parent::render($request, $e);
+        } elseif ($e instanceof ValidationException) {
+            return parent::render($request, $e);
+        }
+
+        return  response()->view('errors.500');
+        //return redirect()->route('error500', []);
+    }
+
+    /**
+     * Function to render 404 error page.
+     *
+     * @param type $request
+     * @param type $e
+     *
+     * @return type mixed
+     */
+    public function render404($request, $e)
+    {
+        $seg = $request->segments();
+        if (in_array('api', $seg)) {
+            return response()->json(['status' => '404']);
+        }
+        if (config('app.debug') == true) {
+            if ($e->getStatusCode() == '404') {
+                return redirect()->route('error404', []);
+            }
+
+            return parent::render($request, $e);
+        }
+
+        return redirect()->route('error404', []);
+    }
+
+    /**
+     * Function to render database connection failed.
+     *
+     * @param type $request
+     * @param type $e
+     *
+     * @return type mixed
+     */
+    public function renderDB($request, $e)
+    {
+        $seg = $request->segments();
+        if (in_array('api', $seg)) {
+            return response()->json(['status' => '404']);
+        }
+        if (config('app.debug') == true) {
+            return parent::render($request, $e);
+        }
+
+        return redirect()->route('error404', []);
+    }
+
+
+    /**
+     * Common finction to render both types of codes.
+     *
+     * @param type $request
+     * @param type $e
+     *
+     * @return type mixed
+     */
+    public function common($request, $e)
+    {
+        switch ($e) {
+            case $e instanceof HttpException:
+                return $this->render404($request, $e);
+            case $e instanceof NotFoundHttpException:
+                return $this->render404($request, $e);
+            case $e instanceof PDOException:
+                if (strpos('1045', $e->getMessage()) == true) {
+                    return $this->renderDB($request, $e);
+                } else {
+                    return $this->render500($request, $e);
+                }
+//            case $e instanceof ErrorException:
+//                if($e->getMessage() == 'Breadcrumb not found with name "" ') {
+//                    return $this->render404($request, $e);
+//                } else {
+//                    return parent::render($request, $e);
+//                }
+            default:
+                return $this->render500($request, $e);
+        }
+
+        return parent::render($request, $e);
+    }
+
+
 
     private function handleExceptions($e)
     {

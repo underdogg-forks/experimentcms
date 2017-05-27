@@ -66,7 +66,9 @@ Route::group(['prefix' => '/backend/'], function (Router $router) {
     ]);
 
 
-
+  Route::group(['middleware' => ['web', 'auth', 'roles']], function () {
+      Route::get('logs', ['as' => 'logs', 'uses' => 'App\FaveoLog\controllers\LogViewerController@index']);
+  });
 
 // append
 });

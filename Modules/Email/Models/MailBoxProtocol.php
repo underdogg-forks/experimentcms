@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MailBoxProtocols extends Model
 {
+    public $timestamps = false;
     protected $table = 'email__mailboxprotocols';
-    public $translatedAttributes = [];
-    protected $fillable = [];
+    protected $fillable = ['id', 'name', 'value'];
 }

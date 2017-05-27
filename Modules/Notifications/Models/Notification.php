@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Entities;
+<?php
+
+namespace Modules\Notification\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Notification extends Model
 {
-    protected $table = 'notification__notifications';
+    protected $table = 'notifications';
     protected $fillable = ['user_id', 'type', 'message', 'icon_class', 'link', 'is_read', 'title'];
     protected $appends = ['time_ago'];
 
@@ -26,7 +28,7 @@ class Notification extends Model
     {
         $driver = config('asgard.user.users.driver');
 
-        return $this->belongsTo("Modules\\User\\Entities\\{$driver}\\User");
+        return $this->belongsTo("Modules\\Auth\\Models\\User");
     }
 
     /**

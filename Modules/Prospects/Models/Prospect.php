@@ -1,15 +1,11 @@
 <?php
 
-namespace Modules\Prospects\Entities;
+namespace Modules\Prospects\Models;
 
-use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class Prospect extends Model
 {
-    use Translatable;
-
-    protected $table = 'prospects__prospects';
-    public $translatedAttributes = [];
+    protected $table = 'prospects';
     protected $fillable = [];
 }

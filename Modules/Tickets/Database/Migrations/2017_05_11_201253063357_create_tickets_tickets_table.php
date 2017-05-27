@@ -12,7 +12,7 @@ class CreateTicketsTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets__tickets', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             // Your fields
@@ -27,6 +27,6 @@ class CreateTicketsTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tickets__tickets');
+        Schema::dropIfExists('tickets');
     }
 }

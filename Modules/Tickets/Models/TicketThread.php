@@ -1,15 +1,12 @@
 <?php
 
-namespace Modules\Tickets\Entities;
+namespace Modules\Tickets\Models;
 
-use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class TicketThread extends Model
 {
-    use Translatable;
 
     protected $table = 'tickets__ticketthreads';
-    public $translatedAttributes = [];
     protected $fillable = [];
 }

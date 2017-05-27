@@ -47,13 +47,13 @@ class SidebarExtender implements \Maatwebsite\Sidebar\SidebarExtender
                         $this->auth->hasAccess('email.mailboxes.index')
                     );
                 });
-                $item->item(trans('email::mailboxtypes.title.mailboxtypes'), function (Item $item) {
+                $item->item(trans('email::mailboxprotocols.title.mailboxprotocols'), function (Item $item) {
                     $item->icon('fa fa-copy');
                     $item->weight(0);
-                    $item->append('admin.email.mailboxtype.create');
-                    $item->route('admin.email.mailboxtype.index');
+                    $item->append('admin.email.mailboxprotocol.create');
+                    $item->route('admin.email.mailboxprotocol.index');
                     $item->authorize(
-                        $this->auth->hasAccess('email.mailboxtypes.index')
+                        $this->auth->hasAccess('email.mailboxprotocols.index')
                     );
                 });
 // append

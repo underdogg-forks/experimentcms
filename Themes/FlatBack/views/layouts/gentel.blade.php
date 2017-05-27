@@ -28,7 +28,7 @@
     <link href="{{asset('themes/flatback/css/custom.css')}}" rel="stylesheet">
 
 
-    <link href="{{asset('themes/flatback/css/main.css')}}" rel="stylesheet">
+    <!-- <link href="{{asset('themes/flatback/css/main.css')}}" rel="stylesheet"> -->
     <link href="{{asset('themes/flatback/css/sb-admin-2.css')}}" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>

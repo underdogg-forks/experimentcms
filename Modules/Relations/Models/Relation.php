@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Relation extends Model
 {
-    protected $table = 'relations__relations';
+    protected $table = 'relations';
     protected $fillable = [];
 }

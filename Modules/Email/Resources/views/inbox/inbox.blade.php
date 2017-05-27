@@ -193,7 +193,7 @@
             columns: [
                 {data: 'mailboxlink', name: 'email_name'},
                 {data: 'mailaddress', name: 'email_address'},
-                {data: 'mailboxtype', name: 'mailbox_type'},
+                {data: 'mailboxprotocol', name: 'mailbox_type'},
                 {data: 'department', name: 'department_id'},
                 {data: 'actions', name: 'actions', orderable: false, searchable: false},
             ]

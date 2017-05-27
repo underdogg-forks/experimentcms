@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'list resource' => 'List mailboxtypes',
-    'create resource' => 'Create mailboxtypes',
-    'edit resource' => 'Edit mailboxtypes',
-    'destroy resource' => 'Destroy mailboxtypes',
+    'list resource' => 'List mailboxprotocols',
+    'create resource' => 'Create mailboxprotocols',
+    'edit resource' => 'Edit mailboxprotocols',
+    'destroy resource' => 'Destroy mailboxprotocols',
     'title' => [
-        'mailboxtypes' => 'MailBoxType',
-        'create mailboxtype' => 'Create a mailboxtype',
-        'edit mailboxtype' => 'Edit a mailboxtype',
+        'mailboxprotocols' => 'MailBoxType',
+        'create mailboxprotocol' => 'Create a mailboxprotocol',
+        'edit mailboxprotocol' => 'Edit a mailboxprotocol',
     ],
     'button' => [
-        'create mailboxtype' => 'Create a mailboxtype',
+        'create mailboxprotocol' => 'Create a mailboxprotocol',
     ],
     'table' => [
     ],

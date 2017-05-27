@@ -61,7 +61,7 @@ class MailboxesController extends Controller
             ->addColumn('mailaddress', function ($mailboxes) {
                 return $mailboxes->email_address;
             })
-            ->addColumn('mailboxtype', function ($mailboxes) {
+            ->addColumn('mailboxprotocol', function ($mailboxes) {
                 return $mailboxes->mailbox_type;
             })
             ->addColumn('isactive', function ($mailboxes) {

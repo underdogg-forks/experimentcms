@@ -7,10 +7,10 @@ use Modules\Core\Repositories\Cache\BaseCacheDecorator;
 
 class CacheMailBoxTypeDecorator extends BaseCacheDecorator implements MailBoxTypeRepository
 {
-    public function __construct(MailBoxTypeRepository $mailboxtype)
+    public function __construct(MailBoxTypeRepository $mailboxprotocol)
     {
         parent::__construct();
-        $this->entityName = 'email.mailboxtypes';
-        $this->repository = $mailboxtype;
+        $this->entityName = 'email.mailboxprotocols';
+        $this->repository = $mailboxprotocol;
     }
 }

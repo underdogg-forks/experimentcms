@@ -237,35 +237,35 @@ $router->group(['prefix' => '/mailpanel'], function (Router $router) {
         'uses' => '\Modules\Email\Http\Controllers\MailboxesController@destroy',
         //'middleware' => 'can:mailboxeses.destroy'
     ]);
-    $router->bind('mailboxtype', function ($id) {
+    $router->bind('mailboxprotocol', function ($id) {
         return app('Modules\Email\Repositories\MailBoxTypeRepository')->find($id);
     });
-    $router->get('mailboxtypes', [
+    $router->get('mailboxprotocols', [
         'as' => 'backend.mailboxestype.index',
         'uses' => '\Modules\Email\Http\Controllers\MailBoxTypeController@index',
         'middleware' => 'can:mailboxestypes.index'
     ]);
-    $router->get('mailboxtypes/create', [
+    $router->get('mailboxprotocols/create', [
         'as' => 'backend.mailboxestype.create',
         'uses' => '\Modules\Email\Http\Controllers\MailBoxTypeController@create',
         'middleware' => 'can:mailboxestypes.create'
     ]);
-    $router->post('mailboxtypes', [
+    $router->post('mailboxprotocols', [
         'as' => 'backend.mailboxestype.store',
         'uses' => '\Modules\Email\Http\Controllers\MailBoxTypeController@store',
         'middleware' => 'can:mailboxestypes.create'
     ]);
-    $router->get('mailboxtypes/{mailboxtype}/edit', [
+    $router->get('mailboxprotocols/{mailboxprotocol}/edit', [
         'as' => 'backend.mailboxestype.edit',
         'uses' => '\Modules\Email\Http\Controllers\MailBoxTypeController@edit',
         'middleware' => 'can:mailboxestypes.edit'
     ]);
-    $router->put('mailboxtypes/{mailboxtype}', [
+    $router->put('mailboxprotocols/{mailboxprotocol}', [
         'as' => 'backend.mailboxestype.update',
         'uses' => '\Modules\Email\Http\Controllers\MailBoxTypeController@update',
         'middleware' => 'can:mailboxestypes.edit'
     ]);
-    $router->delete('mailboxtypes/{mailboxtype}', [
+    $router->delete('mailboxprotocols/{mailboxprotocol}', [
         'as' => 'backend.mailboxestype.destroy',
         'uses' => '\Modules\Email\Http\Controllers\MailBoxTypeController@destroy',
         'middleware' => 'can:mailboxestypes.destroy'

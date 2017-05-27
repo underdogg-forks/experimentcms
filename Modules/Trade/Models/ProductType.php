@@ -1,15 +1,11 @@
 <?php
 
-namespace Modules\Trade\Entities;
+namespace Modules\Trade\Models;
 
-use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class ProductType extends Model
 {
-    use Translatable;
-
     protected $table = 'trade__producttypes';
-    public $translatedAttributes = [];
     protected $fillable = [];
 }

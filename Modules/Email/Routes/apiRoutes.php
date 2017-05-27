@@ -7,7 +7,7 @@ Route::group(['prefix' => 'api'], function () {
 
     Route::get('mailboxesdata', [
         'as' => 'api.mailboxes.data',
-        'uses' => 'MailboxesController@anyData',
+        'uses' => '\Modules\Email\Http\Controllers\MailboxesController@anyData',
         //'middleware' => 'can:mailboxes.mailboxes.index'
     ]);
 
